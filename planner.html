@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Planner Dashboard | Stackly</title>
+    <link rel="stylesheet" href="css/dash.css" />
+    <link rel="stylesheet" href="css/planner.css" />
+  </head>
+  <body class="d-planner">
+    <aside class="side" id="side">
+      <div class="sb">
+        <div>
+            <a class="logo" href="index.html">
+              <img src="images/logo.webp"
+                   alt="Stackly"
+                   class="logo-img">
+            </a>
+            <!-- <small>Planner Dashboard</small> -->
+        </div>
+        
+      </div>
+      <div class="prof">
+        <i class="avatar">PN</i>
+        <div><b class="profileName">Priya Nair</b><small>Lead planner</small></div>
+      </div>
+      <nav>
+        <button class="nl on" data-m="p-over"><span>📊</span>Overview</button
+        ><button class="nl" data-m="p-cli"><span>💑</span>Clients</button
+        ><button class="nl" data-m="p-cal"><span>📅</span>Calendar</button
+        ><button class="nl" data-m="p-ven"><span>🏪</span>Vendors</button
+        ><button class="nl" data-m="p-inv"><span>🧾</span>Invoices</button
+        ><button class="nl" data-m="p-team"><span>🧑‍💼</span>Team tasks</button>
+      </nav>
+      <div class="sf">
+        <a href="index.html" class="nl">🏠 Back to website</a
+        ><button class="btn out" data-logout>⎋ Logout</button>
+      </div>
+    </aside>
+    <div class="shade" id="shade"></div>
+    <div class="main">
+      <header class="top">
+        <button class="tg" id="tg" aria-label="Toggle sidebar">
+          <i></i><i></i><i></i>
+        </button>
+        <h2 id="tt">Overview</h2>
+        <div class="tr">
+          <input class="gs" id="gs" placeholder="Search in this page..." /><span
+            class="bell"
+            title="Notifications"
+            >🔔<sup>3</sup></span
+          ><button class="btn out sm" data-logout>Logout</button>
+        </div>
+      </header>
+      <main class="body">
+        <div class="mod on" id="p-over">
+          <div class="mh">
+            <h1>Planner command centre</h1>
+            <p>Live view of weddings, revenue and today's work.</p>
+          </div>
+          <div class="kpis">
+            <div class="kpi">
+              <span>💒</span><b data-count="18">18</b><em>Active weddings</em>
+            </div>
+            <div class="kpi">
+              <span>🆕</span><b data-count="11">11</b><em>New enquiries</em>
+            </div>
+            <div class="kpi">
+              <span>💵</span><b data-count="42">42</b><em>Revenue (₹ lakh)</em>
+            </div>
+            <div class="kpi">
+              <span>⚠️</span><b data-count="5">5</b><em>Overdue items</em>
+            </div>
+          </div>
+          <div class="g2">
+            <section class="pn">
+              <h3>Revenue by month (₹ lakh)</h3>
+              <div class="chart" id="rev"></div>
+            </section>
+            <section class="pn">
+              <h3>Today's schedule</h3>
+              <ul class="lst" id="today"></ul>
+            </section>
+          </div>
+          <section class="pn">
+            <h3>Pipeline</h3>
+            <div class="g4" id="pipe"></div>
+          </section>
+          <section class="pn">
+            <h3>Alerts</h3>
+            <ul class="lst" id="alerts"></ul>
+          </section>
+        </div>
+        <div class="mod" id="p-cli">
+          <div class="mh">
+            <h1>Clients</h1>
+            <p>Everyone you are planning for.</p>
+          </div>
+          <div class="kpis">
+            <div class="kpi">
+              <span>🤵</span><b data-count="34">34</b><em>Total clients</em>
+            </div>
+            <div class="kpi">
+              <span>🔥</span><b data-count="9">9</b><em>Hot leads</em>
+            </div>
+            <div class="kpi">
+              <span>✅</span><b data-count="16">16</b><em>Contracts signed</em>
+            </div>
+            <div class="kpi">
+              <span>⭐</span><b data-count="49">49</b><em>Avg rating ×10</em>
+            </div>
+          </div>
+          <section class="pn">
+            <h3>Client directory</h3>
+            <div class="fm row">
+              <input id="cs" placeholder="Search client..." /><select id="cf">
+                <option>All</option>
+                <option>Planning</option>
+                <option>Booked</option>
+                <option>Lead</option>
+              </select>
+            </div>
+            <div class="tw">
+              <table id="ct">
+                <thead>
+                  <tr>
+                    <th>Couple</th>
+                    <th>Wedding date</th>
+                    <th>Budget</th>
+                    <th>Stage</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+          <div class="g2">
+            <section class="pn">
+              <h3>Client spotlight</h3>
+              <div class="spot">
+                <i>👰</i>
+                <div>
+                  <h4>Aarthi & Karthik</h4>
+                  <p>Palace wedding · 14 Feb 2027 · 260 guests</p>
+                  <div class="bar"><i style="width: 72%"></i></div>
+                  <small>72% planning complete</small>
+                </div>
+              </div>
+            </section>
+            <section class="pn">
+              <h3>Add new lead</h3>
+              <form class="fm" id="lf2">
+                <input id="ln" placeholder="Couple names" required /><input
+                  id="lb"
+                  type="number"
+                  placeholder="Budget (₹ lakh)"
+                  required
+                /><button class="btn">Add lead</button>
+              </form>
+            </section>
+          </div>
+        </div>
+        <div class="mod" id="p-cal">
+          <div class="mh">
+            <h1>Event calendar</h1>
+            <p>Weddings and site visits this month.</p>
+          </div>
+          <section class="pn">
+            <h3>October 2026</h3>
+            <div class="cal" id="cal"></div>
+          </section>
+          <div class="g2">
+            <section class="pn">
+              <h3>Upcoming events</h3>
+              <ul class="lst" id="evs"></ul>
+            </section>
+            <section class="pn">
+              <h3>Venue availability</h3>
+              <div id="vav"></div>
+            </section>
+          </div>
+          <section class="pn">
+            <h3>Legend</h3>
+            <div class="chips">
+              <span class="tg ok">Wedding</span
+              ><span class="tg wt">Site visit</span
+              ><span class="tg inf">Tasting</span>
+            </div>
+          </section>
+        </div>
+        <div class="mod" id="p-ven">
+          <div class="mh">
+            <h1>Vendor network</h1>
+            <p>Trusted partners, ratings and contracts.</p>
+          </div>
+          <div class="kpis">
+            <div class="kpi">
+              <span>🏪</span><b data-count="120">120</b><em>Vendors</em>
+            </div>
+            <div class="kpi">
+              <span>🥇</span><b data-count="18">18</b><em>Top rated</em>
+            </div>
+            <div class="kpi">
+              <span>📝</span><b data-count="7">7</b><em>Pending contracts</em>
+            </div>
+            <div class="kpi">
+              <span>💬</span><b data-count="4">4</b><em>Open queries</em>
+            </div>
+          </div>
+          <section class="pn">
+            <h3>Vendor directory</h3>
+            <div class="tw">
+              <table id="vt">
+                <thead>
+                  <tr>
+                    <th>Vendor</th>
+                    <th>Category</th>
+                    <th>Rating</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+          <div class="g2">
+            <section class="pn">
+              <h3>Top performers</h3>
+              <ul class="lst" id="top"></ul>
+            </section>
+            <section class="pn">
+              <h3>Request a quote</h3>
+              <form class="fm">
+                <select>
+                  <option>Florist</option>
+                  <option>Caterer</option>
+                  <option>Photographer</option></select
+                ><input placeholder="Event date" /><button
+                  class="btn"
+                  type="button"
+                  data-toast="Quote request sent to 3 vendors"
+                >
+                  Send request
+                </button>
+              </form>
+            </section>
+          </div>
+        </div>
+        <div class="mod" id="p-inv">
+          <div class="mh">
+            <h1>Invoices & payments</h1>
+            <p>Track what is paid, pending and overdue.</p>
+          </div>
+          <div class="kpis">
+            <div class="kpi">
+              <span>💰</span><b data-count="42">42</b
+              ><em>Collected (₹ lakh)</em>
+            </div>
+            <div class="kpi">
+              <span>⌛</span><b data-count="11">11</b><em>Pending (₹ lakh)</em>
+            </div>
+            <div class="kpi">
+              <span>🚨</span><b data-count="3">3</b><em>Overdue (₹ lakh)</em>
+            </div>
+            <div class="kpi">
+              <span>📨</span><b data-count="14">14</b><em>Invoices sent</em>
+            </div>
+          </div>
+          <section class="pn">
+            <h3>Invoice list</h3>
+            <div class="tw">
+              <table id="it">
+                <thead>
+                  <tr>
+                    <th>Invoice</th>
+                    <th>Client</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+          <div class="g2">
+            <section class="pn">
+              <h3>Payment methods</h3>
+              <ul class="tick">
+                <li>UPI and bank transfer</li>
+                <li>Cheque and demand draft</li>
+                <li>Cards via payment link</li>
+                <li>Instalment plan, 3 steps</li>
+              </ul>
+            </section>
+            <section class="pn">
+              <h3>Collection rate</h3>
+              <div class="ringw">
+                <svg viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="52" class="r0" />
+                  <circle cx="60" cy="60" r="52" class="r1" id="ring" />
+                </svg>
+                <b id="rt">0%</b>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="mod" id="p-team">
+          <div class="mh">
+            <h1>Team tasks</h1>
+            <p>Move work across the board.</p>
+          </div>
+          <div class="kan" id="kan"></div>
+          <section class="pn">
+            <h3>Team workload</h3>
+            <div id="work"></div>
+          </section>
+          <div class="g2">
+            <section class="pn">
+              <h3>Announcements</h3>
+              <ul class="lst">
+                <li>
+                  <span>📣 Studio closed on 2 Nov for the Palace wedding</span>
+                </li>
+                <li><span>📣 New vendor onboarding form is live</span></li>
+              </ul>
+            </section>
+            <section class="pn">
+              <h3>Add task</h3>
+              <form class="fm" id="kf">
+                <input id="kn" placeholder="Task title" required /><button
+                  class="btn"
+                >
+                  Add to To do
+                </button>
+              </form>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast"></div>
+    <div class="dlg" id="dlg">
+      <div class="bx">
+        <h3>Log out?</h3>
+        <p>You will return to the website home page.</p>
+        <div>
+          <button class="btn" id="no">Stay</button
+          ><button class="btn out" id="yes">Yes, logout</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/dash.js"></script>
+    <script src="js/planner.js"></script>
+  </body>
+</html>

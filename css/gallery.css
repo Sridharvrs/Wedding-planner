@@ -1,0 +1,728 @@
+.card {
+  background: #f6e0b0;
+  color: #3b2410;
+  border: 5px ridge #a8741a;
+  border-radius: 50px 8px 50px 8px;
+}
+.card h3 {
+  color: #3b2410;
+}
+.card p {
+  color: #3b2410;
+}
+.hero h1 {
+  text-shadow: 0 0 30px #e3b95b;
+}
+
+
+/* =====================================
+   EDITORIAL WEDDING STORY
+===================================== */
+.p-gallery .editorial-story {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: stretch;
+  background: var(--blush);
+  overflow: hidden;
+}
+
+.p-gallery .editorial-image {
+  position: relative;
+  min-height: 560px;
+  overflow: hidden;
+}
+
+.p-gallery .editorial-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    #2a0a1c99,
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.p-gallery .editorial-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+
+.p-gallery .editorial-story:hover .editorial-image img {
+  transform: scale(1.05);
+}
+
+.p-gallery .editorial-tag {
+  position: absolute;
+  z-index: 1;
+  bottom: 35px;
+  left: 35px;
+  padding: 10px 20px;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  background: #2a0a1caa;
+  letter-spacing: 2px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.p-gallery .editorial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(35px, 6vw, 85px);
+}
+
+.p-gallery .editorial-kicker,
+.p-gallery .moments-kicker,
+.p-gallery .journey-kicker {
+  color: #9a5c48;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.p-gallery .editorial-content h2 {
+  margin-top: 18px;
+  color: var(--wine);
+  font-size: clamp(36px, 4.2vw, 58px);
+  line-height: 1.08;
+}
+
+.p-gallery .editorial-content h2 em {
+  display: block;
+  margin-top: 8px;
+  color: var(--wine2);
+  font-weight: 500;
+}
+
+.p-gallery .editorial-content .orn {
+  margin: 22px 0;
+}
+
+.p-gallery .editorial-content > p:not(.editorial-kicker) {
+  margin-bottom: 22px;
+  max-width: 460px;
+}
+
+.p-gallery .editorial-signature {
+  margin-bottom: 28px;
+  color: var(--wine2);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  font-style: italic;
+}
+
+
+/* =====================================
+   SIGNATURE MOMENTS
+===================================== */
+.p-gallery .signature-moments {
+  position: relative;
+  overflow: hidden;
+}
+
+.p-gallery .signature-moments .sh {
+  margin-bottom: 48px;
+}
+
+.p-gallery .signature-moments .moments-kicker {
+  margin-bottom: 12px;
+}
+
+.p-gallery .moments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.p-gallery .moment-card {
+  min-width: 0;
+  background: #fffdf8;
+  border: 1px solid #dfcba6;
+  box-shadow: 0 12px 35px #4a123012;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.p-gallery .moment-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 22px 45px #4a123025;
+}
+
+.p-gallery .moment-image {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+  background: var(--blush);
+}
+
+.p-gallery .moment-image::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent, #2a0a1c55);
+  pointer-events: none;
+}
+
+.p-gallery .moment-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.p-gallery .moment-card:hover .moment-image img {
+  transform: scale(1.09);
+}
+
+.p-gallery .moment-number {
+  position: absolute;
+  z-index: 1;
+  bottom: 15px;
+  left: 18px;
+  color: var(--gold);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 38px;
+  line-height: 1;
+}
+
+.p-gallery .moment-info {
+  padding: 26px 24px 30px;
+  border-top: 3px solid var(--gold);
+}
+
+.p-gallery .moment-info > span {
+  color: #9a5c48;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.p-gallery .moment-info h3 {
+  margin: 9px 0;
+  color: var(--wine);
+  font-size: 29px;
+}
+
+.p-gallery .moment-info p {
+  color: #66515a;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* =====================================
+   WEDDING JOURNEY
+===================================== */
+.p-gallery .wedding-journey {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 90% 10%, #6b1d4538, transparent 38%),
+    #2a0a1c;
+}
+
+/* Wedding journey background image */
+.p-gallery .wedding-journey {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--wine);
+}
+
+.p-gallery .journey-bg,
+.p-gallery .journey-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.p-gallery .journey-bg {
+  z-index: -2;
+}
+
+.p-gallery .journey-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.35;
+  animation: journeyZoom 24s ease-in-out infinite alternate;
+}
+
+.p-gallery .journey-overlay {
+  z-index: -1;
+  background: linear-gradient(
+    115deg,
+    rgba(42, 10, 28, 0.76),
+    rgba(74, 18, 48, 0.315),
+    rgba(42, 10, 28, 0.94)
+  );
+}
+
+.p-gallery .journey-bg img {
+  object-fit: contain;
+  object-position:center 10%;
+}
+
+.p-gallery .wedding-journey .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes journeyZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p-gallery .journey-bg img {
+    animation: none;
+  }
+}
+
+
+.p-gallery .wedding-journey .journey-kicker {
+  color: var(--rose);
+  margin-bottom: 12px;
+}
+
+.p-gallery .wedding-journey .sh p {
+  color: #e8d9df;
+}
+
+.p-gallery .journey-list {
+  max-width: 900px;
+  margin: 55px auto 0;
+  position: relative;
+}
+
+.p-gallery .journey-list::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  bottom: 25px;
+  left: 35px;
+  width: 1px;
+  background: linear-gradient(
+    var(--gold),
+    #f4a6b866,
+    var(--gold)
+  );
+}
+
+.p-gallery .journey-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px 1fr 60px;
+  align-items: center;
+  gap: 24px;
+  padding: 30px 26px;
+  border-bottom: 1px solid #e3b95b40;
+  transition:
+    background 0.35s ease,
+    padding 0.35s ease;
+}
+
+.p-gallery .journey-step:first-child {
+  border-top: 1px solid #e3b95b40;
+}
+
+.p-gallery .journey-step:hover {
+  padding-left: 36px;
+  background: #ffffff08;
+}
+
+.p-gallery .journey-count {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: #2a0a1c;
+  color: var(--gold);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.p-gallery .journey-step:hover .journey-count {
+  background: var(--gold);
+  color: var(--wine);
+}
+
+.p-gallery .journey-label {
+  color: var(--rose);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.p-gallery .journey-step h3 {
+  margin: 7px 0;
+  color: var(--gold);
+  font-size: 30px;
+}
+
+.p-gallery .journey-step p {
+  max-width: 590px;
+  color: #e6d7df;
+  font-size: 15px;
+}
+
+.p-gallery .journey-symbol {
+  justify-self: end;
+  color: var(--gold);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 37px;
+  transition: transform 0.35s ease;
+}
+
+.p-gallery .journey-step:hover .journey-symbol {
+  transform: scale(1.2) rotate(-8deg);
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+@media (max-width: 900px) {
+  .p-gallery .editorial-story {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .p-gallery .editorial-image,
+  .p-gallery .editorial-image img {
+    min-height: 480px;
+  }
+
+  .p-gallery .editorial-content {
+    padding: 35px;
+  }
+
+  .p-gallery .moments-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .p-gallery .moment-card:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 14px);
+    justify-self: center;
+  }
+
+  .p-gallery .moment-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .p-gallery .editorial-story {
+    grid-template-columns: 1fr;
+  }
+
+  .p-gallery .editorial-image,
+  .p-gallery .editorial-image img {
+    min-height: 340px;
+    height: 340px;
+  }
+
+  .p-gallery .editorial-tag {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .p-gallery .editorial-content {
+    padding: 38px 24px 45px;
+  }
+
+  .p-gallery .editorial-content h2 {
+    font-size: 39px;
+  }
+
+  .p-gallery .moments-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .p-gallery .moment-card:last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .p-gallery .moment-image {
+    height: 340px;
+  }
+
+  .p-gallery .journey-list {
+    margin-top: 35px;
+  }
+
+  .p-gallery .journey-list::before {
+    left: 23px;
+  }
+
+  .p-gallery .journey-step {
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    padding: 24px 5px;
+  }
+
+  .p-gallery .journey-step:hover {
+    padding-left: 10px;
+  }
+
+  .p-gallery .journey-count {
+    width: 46px;
+    height: 46px;
+    font-size: 19px;
+  }
+
+  .p-gallery .journey-step h3 {
+    font-size: 25px;
+  }
+
+  .p-gallery .journey-step p {
+    font-size: 14px;
+  }
+
+  .p-gallery .journey-label {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .p-gallery .journey-symbol {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p-gallery .editorial-image img,
+  .p-gallery .moment-card,
+  .p-gallery .moment-image img,
+  .p-gallery .journey-step,
+  .p-gallery .journey-count,
+  .p-gallery .journey-symbol {
+    transition: none;
+  }
+}
+
+
+
+
+
+/* .wedding-journey .journey-bg img {
+  object-fit: cover;
+  object-position:top ;
+} */
+
+
+
+
+
+/* ================= Popular Themes ===================== */
+
+/* =========================
+   POPULAR WEDDING THEMES
+========================= */
+
+.themes .grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.themes .theme-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 320px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  border: 1px solid rgba(227, 185, 91, 0.4);
+  border-radius: 18px;
+  background-color: #25151b;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+/* Dark overlay */
+.themes .theme-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to top,
+    rgba(20, 10, 15, 0.95) 0%,
+    rgba(20, 10, 15, 0.55) 50%,
+    rgba(20, 10, 15, 0.08) 100%
+  );
+}
+
+/* Keep card content above the overlay */
+.themes .theme-card > * {
+  position: relative;
+}
+
+/* Unsplash background images */
+.themes .south-indian {
+  background-image: url("../images/Traditional.webp");
+}
+
+.themes .beach {
+  background-image: url("../images/beach.webp");
+}
+
+.themes .candlelight {
+  background-image: url("../images/royal.webp");
+}
+
+.themes .garden {
+  background-image: url("../images/garden.webp");
+}
+
+.themes .palace {
+  background-image: url("../images/palace.webp");
+}
+
+.themes .floral {
+  background-image: url("../images/blush.webp");
+}
+
+/* Card hover */
+.themes .theme-card:hover {
+  transform: translateY(-7px);
+  border-color: #e3b95b;
+}
+
+/* Icon */
+.themes .theme-card .ic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(227, 185, 91, 0.7);
+  border-radius: 50%;
+  background: rgba(30, 18, 20, 0.65);
+  font-size: 25px;
+}
+
+/* Heading */
+.themes .theme-card h3 {
+  margin: 0 0 10px;
+  color: #f4d58b;
+  font-size: 23px;
+}
+
+/* Description */
+.themes .theme-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .themes .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .themes .grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .themes .theme-card {
+    min-height: 280px;
+    padding: 24px;
+  }
+}
+
+
+/* ============================================= GALLERY IMG EQUAL SIZE ============================================== */
+
+/* Wedding Gallery - Equal Image Sizes */
+.gal {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.gal .gi {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.gal .gi img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .gal {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gal .gi {
+    height: 260px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .gal {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .gal .gi {
+    height: 190px;
+  }
+}
+
+
+.editorial-story{
+    padding: 0px 150px;
+}
+
+@media (max-width: 1250px) {
+    .editorial-story{
+        padding: 0px 20px;
+    }
+}

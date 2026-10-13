@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Couple Dashboard | Stackly</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/dash.css" />
+    <link rel="stylesheet" href="css/couple.css" />
+  </head>
+  <body class="d-couple">
+    <aside class="side" id="side">
+      <div class="sb">
+        <!-- <span class="lg">💍</span> -->
+        <div>
+          <a class="logo" href="index.html">
+              <img src="images/logo.webp"
+                   alt="Stackly"
+                   class="logo-img">
+            </a>
+          <!-- <small>Couple Dashboard</small> -->
+        </div>
+      </div>
+      <div class="prof">
+        <i class="avatar">A&K</i>
+        <div><b class="profileName">Aarthi & Karthik</b><small>Wedding in 125 days</small></div>
+      </div>
+      <nav>
+        <button class="nl on" data-m="c-over"><span>🏡</span>Overview</button
+        ><button class="nl" data-m="c-check"><span>✅</span>Checklist</button
+        ><button class="nl" data-m="c-budget"><span>💰</span>Budget</button
+        ><button class="nl" data-m="c-guest"><span>👥</span>Guest list</button
+        ><button class="nl" data-m="c-vend"><span>🤝</span>Vendors</button
+        ><button class="nl" data-m="c-sched"><span>🗓️</span>Wedding day</button>
+      </nav>
+      <div class="sf">
+        <a href="index.html" class="nl">🏠 Back to website</a
+        ><button class="btn out" data-logout>⎋ Logout</button>
+      </div>
+    </aside>
+    <div class="shade" id="shade"></div>
+    <div class="main">
+      <header class="top">
+        <button class="tg" id="tg" aria-label="Toggle sidebar">
+          <i></i><i></i><i></i>
+        </button>
+        <h2 id="tt">Overview</h2>
+        <div class="tr">
+          <input class="gs" id="gs" placeholder="Search in this page..." /><span
+            class="bell"
+            title="Notifications"
+            >🔔<sup>3</sup></span
+          ><button class="btn out sm" data-logout>Logout</button>
+        </div>
+      </header>
+      <main class="body">
+        <div class="mod on" id="c-over">
+          <div class="mh">
+            <h1>Welcome, <span class="profileName">Aarthi & Karthik</span></h1>
+            <p>Your wedding is shaping up beautifully.</p>
+          </div>
+          <div class="ban">
+            <div>
+              <h2>Your big day</h2>
+              <p>14 February 2027 · The Grand Palace, Coimbatore</p>
+            </div>
+            <div id="cdn" class="cdn"></div>
+          </div>
+          <div class="kpis">
+            <div class="kpi">
+              <span>📋</span><b data-count="24">24</b><em>Tasks done</em>
+            </div>
+            <div class="kpi">
+              <span>👥</span><b data-count="212">212</b
+              ><em>Guests confirmed</em>
+            </div>
+            <div class="kpi">
+              <span>🤝</span><b data-count="9">9</b><em>Vendors booked</em>
+            </div>
+            <div class="kpi">
+              <span>💳</span><b data-count="68">68</b><em>% budget used</em>
+            </div>
+          </div>
+          <div class="g2">
+            <section class="pn">
+              <h3>Planning progress</h3>
+              <div class="ringw">
+                <svg viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="52" class="r0" />
+                  <circle cx="60" cy="60" r="52" class="r1" id="ring" />
+                </svg>
+                  <b id="rt">0%</b>
+              </div>
+              <p class="mt">
+                Complete the pending tasks to reach 100% by January.
+              </p>
+            </section>
+            <section class="pn">
+              <h3>Upcoming appointments</h3>
+              <ul class="lst" id="appt"></ul>
+            </section>
+          </div>
+          <section class="pn">
+            <h3>Recent activity</h3>
+            <ol class="act" id="actv"></ol>
+          </section>
+          <section class="pn">
+            <h3>Planner message</h3>
+            <div class="msg">
+              <i>👰</i>
+              <p>
+                “Hi both! The florist sent three mandap designs. Please pick
+                your favourite by Friday so we can lock the quote.” <br /><small
+                  >Priya Nair, Lead planner</small
+                >
+              </p>
+            </div>
+          </section>
+        </div>
+        <div class="mod" id="c-check">
+          <div class="mh">
+            <h1>Wedding checklist</h1>
+            <p>Tick tasks as you finish them.</p>
+          </div>
+          <section class="pn">
+            <h3>Overall progress</h3>
+            <div class="bar big"><i id="cbar"></i></div>
+            <p id="cpct" class="mt"></p>
+          </section>
+          <div class="g3" id="clist"></div>
+          <div class="g2">
+            <section class="pn">
+              <h3>Planner tips</h3>
+              <ul class="tick">
+                <li>Book photographers 9 months ahead.</li>
+                <li>Finish invitations 3 months before.</li>
+                <li>Do a full outfit trial 3 weeks before.</li>
+                <li>Share the rituals list with elders early.</li>
+              </ul>
+            </section>
+            <section class="pn">
+              <h3>Add your own task</h3>
+              <form class="fm" id="tf">
+                <input
+                  id="tn"
+                  placeholder="e.g. Buy return gifts"
+                  required
+                /><select id="tp">
+                  <option>6 months out</option>
+                  <option>3 months out</option>
+                  <option>Final month</option></select
+                ><button class="btn">Add task</button>
+              </form>
+            </section>
+          </div>
+        </div>
+        <div class="mod" id="c-budget">
+          <div class="mh">
+            <h1>Budget tracker</h1>
+            <p>Every rupee, in one place.</p>
+          </div>
+          <div class="kpis">
+            <div class="kpi">
+              <span>🏦</span><b data-x="₹18,00,000">₹18,00,000</b
+              ><em>Total budget</em>
+            </div>
+            <div class="kpi">
+              <span>💸</span><b data-x="₹12,26,000">₹12,26,000</b><em>Spent</em>
+            </div>
+            <div class="kpi">
+              <span>🪙</span><b data-x="₹5,74,000">₹5,74,000</b
+              ><em>Remaining</em>
+            </div>
+            <div class="kpi">
+              <span>⏳</span><b data-x="₹1,40,000">₹1,40,000</b
+              ><em>Due this month</em>
+            </div>
+          </div>
+          <div class="g2">
+            <section class="pn">
+              <h3>Spending by category</h3>
+              <div id="cats"></div>
+            </section>
+            <section class="pn">
+              <h3>Add an expense</h3>
+              <form class="fm" id="ef">
+                <input id="en" placeholder="Expense name" required /><input
+                  id="ea"
+                  type="number"
+                  min="1"
+                  placeholder="Amount (₹)"
+                  required
+                /><select id="ec">
+                  <option>Venue</option>
+                  <option>Catering</option>
+                  <option>Décor</option>
+                  <option>Photography</option>
+                  <option>Attire</option></select
+                ><button class="btn">Add expense</button>
+              </form>
+              <p class="mt">Total added today: <b id="etot">₹0</b></p>
+            </section>
+          </div>
+          <section class="pn">
+            <h3>Expense log</h3>
+            <div class="tw">
+              <table id="et">
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+          <section class="pn">
+            <h3>Payments due</h3>
+            <ul class="lst" id="due"></ul>
+          </section>
+        </div>
+        <div class="mod" id="c-guest">
+          <div class="mh">
+            <h1>Guest list</h1>
+            <p>Invitations, RSVPs and seating.</p>
+          </div>
+          <div class="kpis">
+            <div class="kpi">
+              <span>✉️</span><b data-count="260">260</b><em>Invited</em>
+            </div>
+            <div class="kpi">
+              <span>✔️</span><b data-count="212">212</b><em>Attending</em>
+            </div>
+            <div class="kpi">
+              <span>❌</span><b data-count="18">18</b><em>Declined</em>
+            </div>
+            <div class="kpi">
+              <span>⏱</span><b data-count="30">30</b><em>Awaiting</em>
+            </div>
+          </div>
+          <div class="g2">
+            <section class="pn">
+              <h3>Add a guest</h3>
+              <form class="fm" id="gf">
+                <input id="gn" placeholder="Guest name" required /><select
+                  id="gr"
+                >
+                  <option>Family</option>
+                  <option>Friends</option>
+                  <option>Colleagues</option></select
+                ><button class="btn">Add guest</button>
+              </form>
+            </section>
+            <section class="pn">
+              <h3>RSVP overview</h3>
+              <div class="stk">
+                <i style="width: 81%; background: #2e7d32">81%</i
+                ><i style="width: 7%; background: #c62828"></i
+                ><i style="width: 12%; background: #ef9a00"></i>
+              </div>
+              <p class="mt">Green attending · Red declined · Amber waiting</p>
+            </section>
+          </div>
+          <section class="pn">
+            <h3>Guest directory</h3>
+            <div class="chips" id="gch">
+              <button class="on" data-f="All">All</button
+              ><button data-f="Attending">Attending</button
+              ><button data-f="Pending">Pending</button
+              ><button data-f="Declined">Declined</button>
+            </div>
+            <div class="tw">
+              <table id="gt">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Group</th>
+                    <th>RSVP</th>
+                    <th>Table</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+          <section class="pn">
+            <h3>Seating tables</h3>
+            <div class="g4" id="seat"></div>
+          </section>
+        </div>
+        <div class="mod" id="c-vend">
+          <div class="mh">
+            <h1>Your vendors</h1>
+            <p>Everyone who is making your day happen.</p>
+          </div>
+          <div class="g3" id="vcards"></div>
+          <div class="g2">
+            <section class="pn">
+              <h3>Contracts & documents</h3>
+              <ul class="lst">
+                <li>
+                  <span>📄 Venue agreement</span><em class="tg ok">Signed</em>
+                </li>
+                <li>
+                  <span>📄 Catering menu</span><em class="tg ok">Signed</em>
+                </li>
+                <li>
+                  <span>📄 Photography contract</span
+                  ><em class="tg wt">Awaiting you</em>
+                </li>
+                <li>
+                  <span>📄 Décor proposal</span><em class="tg wt">In review</em>
+                </li>
+              </ul>
+            </section>
+            <section class="pn">
+              <h3>Rate your experience</h3>
+              <div class="stars" id="stars"></div>
+              <p class="mt" id="sm">Tap a star to rate the planning team.</p>
+            </section>
+          </div>
+          <section class="pn">
+            <h3>Vendor tasting & meetings</h3>
+            <ul class="lst" id="meets"></ul>
+          </section>
+        </div>
+        <div class="mod" id="c-sched">
+          <div class="mh">
+            <h1>Wedding day plan</h1>
+            <p>Hour-by-hour schedule for 14 February.</p>
+          </div>
+          <section class="pn">
+            <h3>Day timeline</h3>
+            <ol class="tlx" id="tlx"></ol>
+          </section>
+          <div class="g2">
+            <section class="pn">
+              <h3>Rituals & ceremonies</h3>
+              <ul class="tick">
+                <li>Ganesh puja and Kappu kattu</li>
+                <li>Muhurtham at 9:15 AM</li>
+                <li>Saptapadi and blessings</li>
+                <li>Evening reception and cake</li>
+              </ul>
+            </section>
+            <section class="pn">
+              <h3>Emergency contacts</h3>
+              <ul class="lst">
+                <li><span>Planner Priya</span><em>+91 98765 43210</em></li>
+                <li><span>Venue manager</span><em>+91 98765 11122</em></li>
+                <li><span>Caterer lead</span><em>+91 98765 33344</em></li>
+              </ul>
+            </section>
+          </div>
+          <section class="pn">
+            <h3>Pack list for the day</h3>
+            <div class="g4" id="pack"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast"></div>
+    <div class="dlg" id="dlg">
+      <div class="bx">
+        <h3>Log out?</h3>
+        <p>You will return to the website home page.</p>
+        <div>
+          <button class="btn" id="no">Stay</button
+          ><button class="btn out" id="yes">Yes, logout</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/dash.js"></script>
+    <script src="js/couple.js"></script>
+  </body>
+</html>

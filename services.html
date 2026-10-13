@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Services | Stackly Wedding Planner</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/services.css" />
+  </head>
+  <body class="p-services">
+    <div class="strip">
+      <span>✦ Now booking 2026–27 wedding dates ✦ Free consultation ✦</span>
+    </div>
+    <header class="nav">
+      <a class="logo" href="index.html">
+        <img src="images/logo.webp"
+             alt="Stackly"
+             class="logo-img">
+      </a>
+      <button class="burger" aria-label="Menu" aria-expanded="false">
+        <i></i><i></i><i></i>
+      </button>
+      <nav class="menu">
+        <div class="menu-top">❦ Menu ❦</div>
+        <a href="index.html" class="">Home</a
+        ><a href="about.html" class="">About</a
+        ><a href="services.html" class="on">Services</a
+        ><a href="gallery.html" class="">Gallery</a
+        ><a href="contact.html" class="">Contact</a
+        ><button class="btn login-btn" data-login>Login</button>
+      </nav>
+    </header>
+    <div class="shade"></div>
+
+<!-- ================= LOGIN MODAL ================= -->
+
+<div class="modal ev-modal" id="lm" role="dialog"
+     aria-modal="true" aria-labelledby="loginTitle" aria-hidden="true">
+
+  <div class="modal-backdrop" data-close></div>
+
+  <div class="box ev-modal-box">
+
+    <button class="x" type="button" aria-label="Close" data-close>×</button>
+
+    <div class="ev-modal-brand">
+      <a class="logo" href="index.html">
+        <img src="images/logo.webp"
+             alt="Stackly"
+             class="logo-img">
+      </a>
+    </div>
+
+    <div class="ev-modal-heading">
+      <span class="ev-eyebrow">YOUR FOREVER STARTS HERE</span>
+      <h2 id="loginTitle">Welcome <em>back.</em></h2>
+      <p class="login-sub">Sign in to continue planning your beautiful day.</p>
+      <div class="ev-ornament"><span></span>❦<span></span></div>
+    </div>
+
+    <div class="roles">
+      <button type="button" class="role-card active" data-role="couple"
+              aria-pressed="true">
+        <span class="ev-role-icon">♡</span>
+        <span><strong>Couple</strong><small>Plan our wedding</small></span>
+        <span class="ev-role-check">✓</span>
+      </button>
+
+      <button type="button" class="role-card" data-role="planner"
+              aria-pressed="false">
+        <span class="ev-role-icon">✧</span>
+        <span><strong>Planner</strong><small>Manage celebrations</small></span>
+        <span class="ev-role-check">✓</span>
+      </button>
+    </div>
+
+    <form id="loginForm" novalidate>
+
+      <div class="ev-field">
+        <label id="emailLabel" for="email">Email Address</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">✉</span>
+          <input id="email" name="email" type="email"
+                 placeholder="you@example.com" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="ev-field">
+        <label for="password">Password</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">♧</span>
+          <input id="password" name="password" type="password"
+                 placeholder="Enter your password"
+                 autocomplete="current-password" required>
+          <button type="button" id="pwdToggle" class="ev-password-toggle"
+                  aria-label="Show password"></button>
+        </div>
+      </div>
+
+      <div class="ev-form-options">
+        <label class="check">
+          <input type="checkbox" name="remember">
+          <span>Remember me</span>
+        </label>
+        <a href="contact.html">Need help?</a>
+      </div>
+
+      <p id="loginError" class="ev-message" role="status"
+         aria-live="polite"></p>
+
+      <button class="btn login-btn ev-submit" type="submit">
+        <span id="btnText">Sign in as Couple</span>
+        <span class="ev-submit-arrow">↗</span>
+      </button>
+    </form>
+
+    <div class="ev-modal-switch">
+      New to Stackly?
+      <button type="button" data-open-signup>Create an account ↗</button>
+    </div>
+
+    <p class="ev-modal-footnote">♡ &nbsp; Made for your once-in-a-lifetime.</p>
+  </div>
+</div>
+
+
+<!-- ================= SIGNUP MODAL ================= -->
+
+<div class="modal ev-modal" id="sm" role="dialog"
+     aria-modal="true" aria-labelledby="signupTitle" aria-hidden="true">
+
+  <div class="modal-backdrop" data-close></div>
+
+  <div class="box ev-modal-box ev-signup-box">
+
+    <button class="x" id="signupClose" type="button"
+            aria-label="Close">×</button>
+
+    <div class="ev-modal-brand">
+      <a class="logo" href="index.html">
+          <img src="images/logo.webp"
+               alt="Stackly"
+               class="logo-img">
+      </a>
+    </div>
+
+    <div class="ev-modal-heading">
+      <span class="ev-eyebrow">BEGIN YOUR NEXT CHAPTER</span>
+      <h2 id="signupTitle">Make it <em>forever.</em></h2>
+      <p>Create an account to start planning your perfect celebration.</p>
+      <div class="ev-ornament"><span></span>❦<span></span></div>
+    </div>
+
+    <form id="signupForm" novalidate>
+
+      <div class="ev-field">
+        <label for="name">Full Name</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">♙</span>
+          <input id="name" name="name" type="text"
+                 placeholder="Enter your full name" autocomplete="name" required>
+        </div>
+      </div>
+
+      <div class="ev-field">
+        <label for="signupEmail">Email Address</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">✉</span>
+          <input id="signupEmail" name="email" type="email"
+                 placeholder="you@example.com" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="ev-field">
+        <label for="signupPassword">Create Password</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">♧</span>
+          <input id="signupPassword" name="password" type="password"
+                 placeholder="Create a strong password"
+                 autocomplete="new-password" required>
+          <button type="button" id="togglePassword"
+                  class="ev-password-toggle" aria-label="Show password">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="ev-field">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">♧</span>
+          <input id="confirmPassword" name="confirmPassword" type="password"
+                 placeholder="Re-enter your password"
+                 autocomplete="new-password" required>
+          <button type="button" id="toggleConfirmPassword"
+                  class="ev-password-toggle" aria-label="Show password">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <label class="check-row ev-terms">
+        <input type="checkbox" name="terms" required>
+        <span>I agree to the <a href="terms.html">Terms</a> and
+          <a href="privacy.html">Privacy Policy</a>.</span>
+      </label>
+
+      <button class="btn submit-btn ev-submit" type="submit">
+        <span>Create Account</span>
+        <span class="ev-submit-arrow">↗</span>
+      </button>
+    </form>
+
+    <div class="ev-modal-switch">
+      Already have an account?
+      <button type="button" data-open-login>Sign in ↗</button>
+    </div>
+
+    <p class="ev-modal-footnote">♡ &nbsp; Your story, beautifully yours.</p>
+  </div>
+</div>
+
+    <main>
+      <section class="hero">
+        <div class="hero-img">
+          <img
+            class=""
+            loading="lazy"
+            src="images/img5.webp"
+            alt="Wedding moment"
+            onerror="this.style.background = '#c9a24b'"
+          />
+        </div>
+        <div class="hero-in">
+          <p class="kick">Stackly Wedding Planners</p>
+          <h1>Everything your wedding needs</h1>
+          <p>Choose single services or a complete planning package.</p>
+        </div>
+        <div class="scroll">Scroll</div>
+      </section>
+
+<!-- ================================= Our Services ================================== -->
+      <section class="sec ivory" id="">
+        <div class="wrap">
+          <header class="sh reveal">
+            <h2>Our services</h2>
+            <div class="orn"><i></i>❦<i></i></div>
+            <p>Mix and match what you need.</p>
+          </header>
+          <div class="grid">
+            <article class="card reveal">
+              <span class="ic">💐</span>
+              <h3>Floral & Décor</h3>
+              <p>Mandaps, aisles and centerpieces built around your palette.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ic">🍽️</span>
+              <h3>Catering</h3>
+              <p>
+                Tasting sessions and menus from multi-cuisine to traditional
+                feasts.
+              </p>
+            </article>
+            <article class="card reveal">
+              <span class="ic">📸</span>
+              <h3>Photo & Film</h3>
+              <p>Candid storytellers and cinematic highlight reels.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ic">🏰</span>
+              <h3>Venue Search</h3>
+              <p>
+                Palaces, beaches, gardens and banquet halls matched to your
+                guest list.
+              </p>
+            </article>
+            <article class="card reveal">
+              <span class="ic">🎶</span>
+              <h3>Music & Emcee</h3>
+              <p>Live bands, DJs, sangeet choreography and a polished MC.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ic">💍</span>
+              <h3>Day-of Coordination</h3>
+              <p>A team on the ground so you only enjoy the day.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+<!-- PREMIUM WEDDING EXPERIENCE -->
+<section class="luxury-experience">
+  <div class="luxury-experience-bg"></div>
+  <div class="luxury-experience-overlay"></div>
+
+  <div class="luxury-inner">
+    <div class="luxury-copy reveal">
+      <span class="luxury-label">
+        <i></i> THE ART OF A BEAUTIFUL WEDDING <i></i>
+      </span>
+
+      <h2>
+        Beyond Planning.<br />
+        <em>Into Forever.</em>
+      </h2>
+
+      <p class="luxury-description">
+        We don't simply organise weddings. We create
+        extraordinary experiences filled with thoughtful
+        details, breathtaking settings and moments that
+        stay with you long after the celebration ends.
+      </p>
+
+      <div class="luxury-features">
+        <div class="luxury-feature">
+          <span class="luxury-icon">✧</span>
+          <div>
+            <h3>Designed Around You</h3>
+            <p>Every detail reflects your unique love story.</p>
+          </div>
+        </div>
+
+        <div class="luxury-feature">
+          <span class="luxury-icon">❦</span>
+          <div>
+            <h3>Exceptional Craftsmanship</h3>
+            <p>Beautiful styling with an eye for every detail.</p>
+          </div>
+        </div>
+
+        <div class="luxury-feature">
+          <span class="luxury-icon">♡</span>
+          <div>
+            <h3>Effortless Celebrations</h3>
+            <p>Relax, celebrate and enjoy every precious moment.</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="error.html" class="luxury-link">
+        DISCOVER OUR APPROACH <span>↗</span>
+      </a>
+    </div>
+
+    <div class="luxury-side reveal">
+      <div class="luxury-image-frame">
+        <img
+          src="images/img5.webp"
+          alt="Romantic wedding ceremony with elegant floral styling"
+          loading="lazy"
+        />
+        <div class="luxury-image-caption">
+          <span>EST. 2011</span>
+          <p>Every detail. Every emotion. Every memory.</p>
+        </div>
+      </div>
+
+      <div class="luxury-stamp">
+        <span>MADE WITH</span>
+        <strong>LOVE</strong>
+        <span>ALWAYS & FOREVER</span>
+        <i>❦</i>
+      </div>
+    </div>
+  </div>
+
+  <div class="luxury-bottom-note">
+    <span>01 — OUR PHILOSOPHY</span>
+    <span>MADE FOR YOUR FOREVER &nbsp; ✦ &nbsp; Stackly</span>
+  </div>
+</section>
+
+
+<!-- ================================= Planning Packages ================================== -->
+      <section class="sec blush" id="">
+        <div class="wrap">
+          <header class="sh reveal">
+            <h2>Planning packages</h2>
+            <div class="orn"><i></i>❦<i></i></div>
+            <p>Three ways to work with us.</p>
+          </header>
+          <div class="grid">
+            <article class="card reveal">
+              <span class="ic">🌸</span>
+              <h3>Essential</h3>
+              <p>
+                Day-of coordination, vendor schedule and one rehearsal. From
+                ₹60,000.
+              </p>
+            </article>
+            <article class="card reveal">
+              <span class="ic">🌹</span>
+              <h3>Signature</h3>
+              <p>
+                Full planning, décor design and vendor management. From
+                ₹2,50,000.
+              </p>
+            </article>
+            <article class="card reveal">
+              <span class="ic">👑</span>
+              <h3>Royal</h3>
+              <p>
+                Destination or palace weddings with concierge service. From
+                ₹8,00,000.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+<!-- ================================= How Booking Works ================================== -->
+
+<section class="sec wine dk booking-premium" id="booking-process">
+  <div class="wrap">
+
+    <header class="sh reveal">
+      <span class="booking-eyebrow">YOUR JOURNEY, BEAUTIFULLY PLANNED</span>
+
+      <h2>How Booking Works</h2>
+
+      <div class="orn">
+        <i></i>❦<i></i>
+      </div>
+
+      <p>From the very first conversation to your happily ever after.</p>
+    </header>
+
+    <ol class="booking-timeline">
+
+      <!-- STEP 01 -->
+      <li class="booking-step reveal">
+        <div class="booking-number">
+          <span>01</span>
+        </div>
+
+        <article class="booking-card">
+          <div class="booking-icon">
+            <i class="fa-regular fa-comments"></i>
+          </div>
+
+          <span class="booking-label">THE FIRST STEP</span>
+
+          <h3>Enquire</h3>
+
+          <p>
+            Tell us your wedding date, guest count, and the beautiful
+            celebration you have in mind.
+          </p>
+
+          <span class="booking-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </article>
+      </li>
+
+      <!-- STEP 02 -->
+      <li class="booking-step reveal">
+        <div class="booking-number">
+          <span>02</span>
+        </div>
+
+        <article class="booking-card">
+          <div class="booking-icon">
+            <i class="fa-regular fa-calendar-check"></i>
+          </div>
+
+          <span class="booking-label">LET'S CONNECT</span>
+
+          <h3>Consult</h3>
+
+          <p>
+            Enjoy a complimentary consultation with our senior planner
+            to discuss your vision, preferences, and priorities.
+          </p>
+
+          <span class="booking-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </article>
+      </li>
+
+      <!-- STEP 03 -->
+      <li class="booking-step reveal">
+        <div class="booking-number">
+          <span>03</span>
+        </div>
+
+        <article class="booking-card">
+          <div class="booking-icon">
+            <i class="fa-regular fa-file-lines"></i>
+          </div>
+
+          <span class="booking-label">YOUR DREAM, DESIGNED</span>
+
+          <h3>Proposal</h3>
+
+          <p>
+            Receive a thoughtfully prepared proposal with your estimated
+            budget, creative direction, and planning details.
+          </p>
+
+          <span class="booking-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </article>
+      </li>
+
+      <!-- STEP 04 -->
+      <li class="booking-step reveal">
+        <div class="booking-number">
+          <span>04</span>
+        </div>
+
+        <article class="booking-card">
+          <div class="booking-icon">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+
+          <span class="booking-label">LET THE MAGIC BEGIN</span>
+
+          <h3>Confirm</h3>
+
+          <p>
+            Finalise your booking, sign the agreement, and let us begin
+            creating the wedding celebration you have always imagined.
+          </p>
+
+          <span class="booking-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </article>
+      </li>
+
+    </ol>
+
+    <div class="booking-footer reveal">
+      <span class="booking-footer-icon">
+        <i class="fa-solid fa-sparkles"></i>
+      </span>
+
+      <p>Your forever begins with one beautiful conversation.</p>
+
+      <a href="error.html" class="booking-cta">
+        Begin Your Journey
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================= Popular Add-ons ================================== --> 
+
+<section class="sec champ addons" id="addons">
+  <div class="wrap">
+    <header class="sh reveal">
+      <h2>Popular add-ons</h2>
+      <div class="orn"><i></i>❦<i></i></div>
+      <p>Make the day extra special.</p>
+    </header>
+
+    <div class="grid">
+      <article class="card reveal addon-card fireworks">
+        <span class="ic">🎆</span>
+        <h3>Fireworks</h3>
+        <p>Safe, licensed finale displays.</p>
+      </article>
+
+      <article class="card reveal addon-card petal-drop">
+        <span class="ic">🌸</span>
+        <h3>Petal Drop</h3>
+        <p>A magical shower of petals for your grand entrance.</p>
+      </article>
+
+      <article class="card reveal addon-card baraat">
+        <span class="ic">🐎</span>
+        <h3>Baraat Entry</h3>
+        <p>Horse, decorated car or traditional entry.</p>
+      </article>
+
+      <article class="card reveal addon-card gifts">
+        <span class="ic">🎁</span>
+        <h3>Return Gifts</h3>
+        <p>Beautifully curated custom guest hampers.</p>
+      </article>
+
+      <!-- New article 5 -->
+      <article class="card reveal addon-card live-music">
+        <span class="ic">🎻</span>
+        <h3>Live Music</h3>
+        <p>Romantic live performances to make every moment unforgettable.</p>
+      </article>
+
+      <!-- New article 6 -->
+      <article class="card reveal addon-card bridal-entry">
+        <span class="ic">👰</span>
+        <h3>Bridal Entry</h3>
+        <p>A breathtaking entrance with elegant lighting and dreamy effects.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================== -->
+
+      <section class="sec ivory" id="">
+        <div class="wrap">
+          <header class="sh reveal">
+            <h2>Questions answered</h2>
+            <div class="orn"><i></i>❦<i></i></div>
+            <p>Quick answers before you call.</p>
+          </header>
+          <div class="faq">
+            <details class="reveal">
+              <summary>How early should we book?</summary>
+              <p>Six to twelve months ahead for peak season.</p>
+            </details>
+            <details class="reveal">
+              <summary>Can you work with our budget?</summary>
+              <p>Yes. We build plans from ₹2 lakh to ₹50 lakh.</p>
+            </details>
+            <details class="reveal">
+              <summary>Do you plan destination weddings?</summary>
+              <p>Yes, in Kerala, Goa, Udaipur and Bali.</p>
+            </details>
+            <details class="reveal">
+              <summary>Can we bring our own vendors?</summary>
+              <p>Absolutely, we coordinate them for you.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+<!-- ========================================================= -->
+
+<!-- PREMIUM SECTION 1: SIGNATURE EXPERIENCE -->
+<section class="signature-experience">
+  <div class="signature-bg"></div>
+  <div class="signature-content reveal">
+    <span class="premium-kicker">THE ART OF CELEBRATION</span>
+    <div class="premium-ornament">✦ ── ❦ ── ✦</div>
+    <h2>Every Love Story<br />Deserves a <em>Grand Beginning</em></h2>
+    <p>
+      From the first invitation to the final farewell,
+      we transform your most meaningful moments into
+      extraordinary memories.
+    </p>
+    <a href="error.html" class="premium-btn">
+      Create Your Celebration <span>↗</span>
+    </a>
+    <div class="signature-note">THOUGHTFULLY PLANNED · BEAUTIFULLY REMEMBERED</div>
+  </div>
+  <span class="signature-number">01 / Stackly</span>
+</section>
+
+<!-- PREMIUM SECTION 2: WEDDING EXPERIENCES -->
+<section class="wedding-experiences">
+  <div class="wrap">
+    <header class="sh reveal">
+      <span class="premium-kicker">CELEBRATIONS WITH CHARACTER</span>
+      <h2>Find Your Kind of Forever</h2>
+      <div class="orn"><i></i>❦<i></i></div>
+      <p>
+        Every couple is different. Your wedding should be too.
+      </p>
+    </header>
+
+    <div class="experience-grid">
+
+      <article class="experience-card reveal">
+        <img
+          src="images/img6.webp"
+          alt="Elegant luxury wedding reception"
+          loading="lazy"
+        />
+        <div class="experience-overlay"></div>
+        <span class="experience-no">01</span>
+        <div class="experience-info">
+          <span>TIMELESS GRANDEUR</span>
+          <h3>Royal Celebrations</h3>
+          <p>Palatial venues, exquisite décor and unforgettable entrances.</p>
+          <a href="error.html" aria-label="Enquire about royal celebrations">Discover More ↗</a>
+        </div>
+      </article>
+
+      <article class="experience-card reveal">
+        <img
+          src="images/img1.webp"
+          alt="Romantic outdoor wedding celebration"
+          loading="lazy"
+        />
+        <div class="experience-overlay"></div>
+        <span class="experience-no">02</span>
+        <div class="experience-info">
+          <span>LOVE WITHOUT BORDERS</span>
+          <h3>Destination Weddings</h3>
+          <p>Beautiful escapes, breathtaking scenery and celebrations away from home.</p>
+          <a href="error.html" aria-label="Enquire about destination weddings">Discover More ↗</a>
+        </div>
+      </article>
+
+      <article class="experience-card reveal">
+        <img
+          src="images/img4.webp"
+          alt="Intimate wedding table setting with flowers and candles"
+          loading="lazy"
+        />
+        <div class="experience-overlay"></div>
+        <span class="experience-no">03</span>
+        <div class="experience-info">
+          <span>BEAUTY IN EVERY DETAIL</span>
+          <h3>Intimate Weddings</h3>
+          <p>Meaningful gatherings, thoughtful details and moments close to the heart.</p>
+          <a href="error.html" aria-label="Enquire about intimate weddings">Discover More ↗</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PREMIUM SECTION 3: OUR PROMISE -->
+<section class="eternal-promise">
+  <div class="promise-photo"></div>
+  <div class="promise-content reveal">
+    <span class="premium-kicker">THE Stackly PROMISE</span>
+    <h2>Beautifully Planned.<br /><em>Effortlessly Yours.</em></h2>
+    <p>
+      The finest weddings are not just seen. They are felt.
+      We bring every detail together with care, creativity
+      and a personal touch, so you can be fully present
+      for the moments that matter.
+    </p>
+
+    <div class="promise-points">
+      <div>
+        <span>✦</span>
+        <p><strong>Personalised Planning</strong>
+        <small>Your story, your style, your celebration.</small></p>
+      </div>
+      <div>
+        <span>✦</span>
+        <p><strong>Thoughtful Details</strong>
+        <small>Every finishing touch has a purpose.</small></p>
+      </div>
+      <div>
+        <span>✦</span>
+        <p><strong>Seamless Coordination</strong>
+        <small>One dedicated team, every precious moment.</small></p>
+      </div>
+    </div>
+
+    <a href="error.html" class="promise-link">
+      Let's Plan Something Beautiful <span>⟶</span>
+    </a>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+      <section class="sec cta">
+        <div class="wrap reveal">
+          <h2>Ready to plan your forever?</h2>
+          <p>
+            Book a free 30-minute consultation and walk away with a draft plan.
+          </p>
+          <a class="btn" href="error.html">Book consultation</a>
+        </div>
+      </section>
+    </main>
+
+<!-- ==================== Footer ==================== -->
+
+
+<footer class="site-footer wedding-footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img
+            src="images/logo.webp"
+            alt="Wedding Planner"
+            class="brand-logo"
+          >
+        </a>
+
+        <p>
+          Creating unforgettable weddings filled with love,
+          elegance, and beautiful little moments. From the first
+          idea to your final farewell, we make your dream day real.
+        </p>
+
+        <div class="footer-social">
+          <a href="error.html" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="error.html" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="error.html" aria-label="X">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="error.html" aria-label="Pinterest">
+            <i class="fa-brands fa-pinterest-p"></i>
+          </a>
+          <a href="error.html" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services.html">Wedding Planning</a></li>
+          <li><a href="services.html">Venue Selection</a></li>
+          <li><a href="services.html">Wedding Décor</a></li>
+          <li><a href="services.html">Photography</a></li>
+          <li><a href="services.html">Entertainment</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Wedding Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-col footer-news">
+        <h4>Let's Stay Connected</h4>
+        <p>
+          Get wedding inspiration, planning tips, and a little
+          romance delivered to your inbox.
+        </p>
+
+        <form class="footer-news-form"
+              onsubmit="window.location.href='error.html'; return false;">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            aria-label="Email address"
+            required
+          >
+          <button type="submit" aria-label="Subscribe">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+
+        <span class="footer-note">
+          <i class="fa-regular fa-heart"></i>
+          Made for your happily ever after.
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <span>
+        &copy; <span id="footer-year"></span>
+        Wedding Planner. All rights reserved.
+      </span>
+
+      <span class="footer-credit">
+        Crafted with <i class="fa-solid fa-heart"></i> for love stories.
+      </span>
+    </div>
+
+  </div>
+</footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/signup.js"></script>
+    <script src="js/services.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+/* Couple dashboard: romantic rose, ivory cards, scalloped borders */
+.d-couple {
+  --bg: #fff3ea;
+}
+.d-couple .pn {
+  border: 3px double #b8860b;
+  border-radius: 22px;
+}
+.d-couple .kpi {
+  border: 3px dashed #8a1c4a;
+  border-radius: 4px 28px 4px 28px;
+}
+.d-couple .vc {
+  border: 3px solid #8a1c4a;
+  border-radius: 20px;
+}
+.d-couple .ban::after {
+  content: "💞";
+  position: absolute;
+  right: 16px;
+  bottom: -10px;
+  font-size: 90px;
+  opacity: 0.15;
+  animation: sw 5s infinite;
+}
+.d-couple .mh h1 {
+  background: linear-gradient(90deg, var(--wine2), #c2185b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

@@ -1,0 +1,812 @@
+.card {
+  background: #fbd3dc;
+  color: #4a1230;
+  border: 3px dashed #8a1c4a;
+  border-radius: 4px 30px 4px 30px;
+}
+.card h3 {
+  color: #4a1230;
+}
+.card p {
+  color: #4a1230;
+}
+.hero h1 {
+  letter-spacing: 2px;
+}
+
+
+
+/* ===== PREMIUM SIGNATURE SECTION ===== */
+.signature {
+  background:
+    linear-gradient(135deg, #fff8ee 0%, #fbe7e4 100%);
+  overflow: hidden;
+}
+
+.signature-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.signature-photo {
+  position: relative;
+  padding: 14px;
+  border: 2px solid var(--gold);
+  background: #fff;
+  box-shadow: 18px 18px 0 #4a123014;
+}
+
+.signature-photo img {
+  width: 100%;
+  height: 590px;
+  object-fit: cover;
+}
+
+.signature-stamp {
+  position: absolute;
+  right: -28px;
+  bottom: 36px;
+  width: 86px;
+  height: 86px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  border: 3px double var(--gold);
+  border-radius: 50%;
+  background: var(--wine);
+  color: var(--gold);
+  font: 700 25px/1.05 'Cormorant Garamond', serif;
+}
+
+.premium-kicker {
+  display: block;
+  color: #a46c29;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.signature-content h2,
+.inspiration-heading h2,
+.promise-inner h2 {
+  font-size: clamp(38px, 5vw, 62px);
+  color: var(--wine);
+  line-height: 1.08;
+}
+
+.signature-content h2 em {
+  color: #a46c29;
+  font-weight: 500;
+}
+
+.signature-content > p {
+  margin: 20px 0;
+  line-height: 1.9;
+}
+
+.signature-points {
+  margin: 25px 0 30px;
+}
+
+.signature-points > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 17px 0;
+  border-bottom: 1px solid #b8860b55;
+}
+
+.signature-points > div > span {
+  font: 700 27px 'Cormorant Garamond', serif;
+  color: #a46c29;
+}
+
+.signature-points h3 {
+  color: var(--wine);
+  font-size: 23px;
+}
+
+.signature-points p {
+  font-size: 15px;
+  color: #6b5260;
+}
+
+
+/* ===== CINEMATIC INSPIRATION ===== */
+.about-inspiration {
+  padding: 100px 0;
+  color: #fff;
+  background:
+    linear-gradient(120deg, #210817f0, #4a1230d9),
+    url("../images/img3.webp")
+    center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+.inspiration-heading {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 50px;
+}
+
+.inspiration-heading h2 {
+  color: var(--ivory);
+}
+
+.inspiration-heading .premium-kicker {
+  color: var(--gold);
+}
+
+.inspiration-heading > p {
+  max-width: 570px;
+  margin: 20px auto 0;
+  color: #f5e6ec;
+}
+
+.inspiration-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.inspiration-card {
+  min-width: 0;
+  height: 430px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid #e3b95b99;
+  color: #fff;
+  text-decoration: none;
+  background: #2a0a1c;
+}
+
+.inspiration-card img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .8s ease;
+}
+
+.inspiration-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    transparent 30%,
+    #21081745 55%,
+    #210817f2 100%
+  );
+  pointer-events: none;
+}
+
+.inspiration-card > div {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 25px;
+}
+
+.inspiration-card span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold);
+}
+
+.inspiration-card h3 {
+  margin-top: 10px;
+  font-size: clamp(23px, 2.5vw, 30px);
+  color: var(--ivory);
+}
+
+.inspiration-card:hover img {
+  transform: scale(1.08);
+}
+
+.inspiration-card:hover h3 {
+  color: var(--gold);
+}
+
+
+/* ===== Stackly PROMISE ===== */
+.vows-promise {
+  position: relative;
+  padding: 105px 20px;
+  text-align: center;
+  overflow: hidden;
+  background:
+    linear-gradient(110deg, #fff8eef0, #fbe7e4e8),
+    url("../images/img5.webp")
+    center/cover no-repeat;
+}
+
+.promise-inner {
+  max-width: 780px;
+  margin: auto;
+}
+
+.promise-inner .premium-kicker {
+  color: #a46c29;
+}
+
+.promise-symbol {
+  font: 52px 'Cormorant Garamond', serif;
+  color: #b8860b;
+  margin: 8px 0;
+}
+
+.promise-inner h2 {
+  margin-bottom: 22px;
+}
+
+.promise-inner > p {
+  max-width: 610px;
+  margin: 0 auto 30px;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #604455;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .signature-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .signature-photo {
+    max-width: 620px;
+    width: calc(100% - 15px);
+    margin-right: 15px;
+  }
+
+  .signature-photo img {
+    height: 480px;
+  }
+
+  .inspiration-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .inspiration-card {
+    height: 380px;
+  }
+
+  .inspiration-card:last-child {
+    grid-column: 1 / -1;
+    height: 400px;
+  }
+
+  .about-inspiration {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 560px) {
+  .signature-photo img {
+    height: 360px;
+  }
+
+  .signature-stamp {
+    width: 70px;
+    height: 70px;
+    right: -15px;
+  }
+
+  .inspiration-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .inspiration-card,
+  .inspiration-card:last-child {
+    grid-column: auto;
+    height: 390px;
+  }
+
+  .about-inspiration {
+    padding: 70px 0;
+  }
+
+  .vows-promise {
+    padding: 75px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inspiration-card img {
+    transition: none;
+  }
+}
+
+
+/* =========================================
+   Stackly — LUXURY EDITORIAL TIMELINE
+========================================= */
+
+.tl {
+  --tl-wine: #4a1230;
+  --tl-gold: #e3b95b;
+  --tl-ivory: #fff8ee;
+  --tl-muted: #83747a;
+
+  position: relative;
+  width: min(100%, 900px);
+  margin: 72px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Fine vertical gold line */
+.tl::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  bottom: 28px;
+  left: 145px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(227, 185, 91, 0.9) 8%,
+    rgba(227, 185, 91, 0.65) 92%,
+    transparent
+  );
+}
+
+/* Individual milestone */
+.tl li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 115px minmax(0, 1fr);
+  column-gap: 62px;
+  padding: 0 0 66px;
+  margin: 0;
+}
+
+/* Timeline marker */
+.tl li::before {
+  content: "";
+  position: absolute;
+  left: 140px;
+  top: 15px;
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--tl-gold);
+  border-radius: 50%;
+  background: var(--tl-ivory);
+  box-shadow: 0 0 0 5px rgba(227, 185, 91, 0.10);
+  z-index: 1;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Oversized editorial year */
+.tl li h3 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: var(--tl-wine);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 3.3vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  text-align: right;
+  transition: color 0.3s ease;
+}
+
+/* Editorial content */
+.tl li p {
+  position: relative;
+  max-width: 490px;
+  margin: 0;
+  padding: 0 0 22px;
+  color: var(--tl-muted);
+  font-family: "Jost", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.9;
+  letter-spacing: 0.2px;
+  border-bottom: 1px solid rgba(74, 18, 48, 0.12);
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Subtle gold detail before description */
+.tl li p::before {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 1px;
+  margin: 2px 0 17px;
+  background: var(--tl-gold);
+  transition: width 0.35s ease;
+}
+
+/* Last item — clean ending */
+.tl li:last-child {
+  padding-bottom: 0;
+}
+
+.tl li:last-child p {
+  border-bottom: none;
+}
+
+/* Refined hover interaction */
+.tl li:hover::before {
+  background: var(--tl-gold);
+  box-shadow: 0 0 0 7px rgba(227, 185, 91, 0.14);
+  transform: scale(1.08);
+}
+
+.tl li:hover h3 {
+  color: #8b5d23;
+}
+
+.tl li:hover p {
+  color: var(--tl-wine);
+  border-color: rgba(227, 185, 91, 0.65);
+}
+
+.tl li:hover p::before {
+  width: 58px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+  .tl {
+    width: min(100%, 650px);
+    margin-top: 55px;
+  }
+
+  .tl::before {
+    left: 104px;
+  }
+
+  .tl li {
+    grid-template-columns: 78px minmax(0, 1fr);
+    column-gap: 52px;
+    padding-bottom: 52px;
+  }
+
+  .tl li::before {
+    left: 99px;
+    top: 12px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .tl li h3 {
+    font-size: 2.1rem;
+    letter-spacing: -0.5px;
+  }
+
+  .tl li p {
+    font-size: 0.96rem;
+    line-height: 1.8;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .tl {
+    margin-top: 42px;
+    padding-left: 0;
+  }
+
+  .tl::before {
+    left: 9px;
+    top: 10px;
+    bottom: 22px;
+  }
+
+  .tl li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 0 0 38px 34px;
+  }
+
+  .tl li::before {
+    left: 4px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .tl li h3 {
+    margin: 0 0 12px;
+    text-align: left;
+    font-size: 2.25rem;
+    line-height: 1;
+  }
+
+  .tl li p {
+    max-width: 100%;
+    padding-bottom: 19px;
+    font-size: 0.94rem;
+    line-height: 1.8;
+  }
+
+  .tl li p::before {
+    margin: 0 0 13px;
+    width: 28px;
+  }
+
+  .tl li:last-child {
+    padding-bottom: 0;
+  }
+
+  .tl li:hover {
+    transform: none;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .tl li::before,
+  .tl li h3,
+  .tl li p,
+  .tl li p::before {
+    transition: none;
+  }
+}
+
+
+/* =====================================
+   MEET THE PLANNERS — LUXURY PHOTO CARDS
+===================================== */
+
+.sec.wine.dk .grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+  margin-top: 48px;
+}
+
+/* Planner card */
+.sec.wine.dk .grid .card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 410px;
+  padding: 30px 22px;
+  text-align: center;
+  color: #fff8ee;
+  background-color: #321020;
+  border: 1px solid rgba(227, 185, 91, 0.65);
+  border-radius: 4px;
+  box-shadow: 0 12px 35px rgba(20, 4, 13, 0.18);
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+/* Individual background images */
+.sec.wine.dk .grid .card:nth-child(1) {
+  background-image: url("../images/person2.webp");
+}
+
+.sec.wine.dk .grid .card:nth-child(2) {
+  background-image: url("../images/team5.webp");
+}
+
+.sec.wine.dk .grid .card:nth-child(3) {
+  background-image: url("../images/person4.webp");
+}
+
+.sec.wine.dk .grid .card:nth-child(4) {
+  background-image: url("../images/team4.webp");
+}
+
+.sec.wine.dk .grid .card {
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+}
+
+/* Dark gradient for readable text */
+.sec.wine.dk .grid .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(35, 8, 23, 0.05) 5%,
+    rgba(35, 8, 23, 0.12) 35%,
+    rgba(35, 8, 23, 0.82) 65%,
+    #260b1a 100%
+  );
+  transition: background 0.45s ease;
+}
+
+/* Fine inset gold border */
+.sec.wine.dk .grid .card::after {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  z-index: -1;
+  border: 1px solid rgba(227, 185, 91, 0.55);
+  pointer-events: none;
+  transition:
+    inset 0.4s ease,
+    border-color 0.4s ease;
+}
+
+/* Icon */
+
+
+/* Planner name */
+.sec.wine.dk .grid .card h3 {
+  position: relative;
+  margin: 0 0 13px;
+  color: #fff8ee;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.55rem, 2vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+}
+
+/* Gold divider below name */
+.sec.wine.dk .grid .card h3::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 1px;
+  margin: 12px auto 0;
+  background: #e3b95b;
+  transition: width 0.35s ease;
+}
+
+/* Planner description */
+.sec.wine.dk .grid .card p {
+  max-width: 240px;
+  margin: 0;
+  color: rgba(255, 248, 238, 0.88);
+  font-family: "Jost", sans-serif;
+  font-size: 0.96rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* Premium hover effect */
+@media (hover: hover) {
+  .sec.wine.dk .grid .card:hover {
+    transform: translateY(-8px);
+    border-color: #e3b95b;
+    box-shadow: 0 22px 45px rgba(20, 4, 13, 0.3);
+  }
+
+  .sec.wine.dk .grid .card:hover::after {
+    inset: 6px;
+    border-color: #e3b95b;
+  }
+
+
+  .sec.wine.dk .grid .card:hover h3::after {
+    width: 55px;
+  }
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 950px) {
+  .sec.wine.dk .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .sec.wine.dk .grid .card {
+    min-height: 390px;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 560px) {
+  .sec.wine.dk .grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 34px;
+  }
+
+  .sec.wine.dk .grid .card {
+    min-height: 390px;
+    padding: 28px 22px;
+    background-position: center 30%;
+  }
+
+  .sec.wine.dk .grid .card h3 {
+    font-size: 1.8rem;
+  }
+
+  .sec.wine.dk .grid .card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .sec.wine.dk .grid .card,
+  .sec.wine.dk .grid .card::after,
+  .sec.wine.dk .grid .card h3::after {
+    transition: none;
+  }
+}
+
+
+/* Elegant gold planner icons */
+
+.sec.wine.dk .grid .card .ic {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  margin: 0 0 18px;
+
+  color: #e3b95b;
+  background: rgba(74, 18, 48, 0.72);
+  border: 1px solid rgba(227, 185, 91, 0.8);
+  border-radius: 50%;
+
+  font-size: 1.3rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.16);
+
+  transition:
+    color 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.sec.wine.dk .grid .card .ic i {
+  line-height: 1;
+}
+
+@media (hover: hover) {
+  .sec.wine.dk .grid .card:hover .ic {
+    color: #fff8ee;
+    background: #6b1d45;
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(227, 185, 91, 0.2);
+  }
+}

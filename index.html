@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Home | Stackly Wedding Planner</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body class="p-index">
+    <div class="strip">
+      <span>✦ Now booking 2026–27 wedding dates ✦ Free consultation ✦</span>
+    </div>
+    <header class="nav">
+      <a class="logo" href="index.html">
+        <img src="images/logo.webp"
+             alt="Stackly"
+             class="logo-img">
+      </a>
+      <button class="burger" aria-label="Menu" aria-expanded="false">
+        <i></i><i></i><i></i>
+      </button>
+      <nav class="menu">
+        <div class="menu-top">❦ Menu ❦</div>
+        <a href="index.html" class="on">Home</a
+        ><a href="about.html" class="">About</a
+        ><a href="services.html" class="">Services</a
+        ><a href="gallery.html" class="">Gallery</a
+        ><a href="contact.html" class="">Contact</a
+        ><button class="btn login-btn" data-login>Login</button>
+      </nav>
+    </header>
+    <div class="shade"></div>
+
+<!-- ================= LOGIN MODAL ================= -->
+
+<div class="modal ev-modal" id="lm" role="dialog"
+     aria-modal="true" aria-labelledby="loginTitle" aria-hidden="true">
+
+  <div class="modal-backdrop" data-close></div>
+
+  <div class="box ev-modal-box">
+
+    <button class="x" type="button" aria-label="Close" data-close>×</button>
+
+    <div class="ev-modal-brand">
+      <a class="logo" href="index.html">
+          <img src="images/logo.webp"
+               alt="Stackly"
+               class="logo-img">
+      </a>
+    </div>
+
+    <div class="ev-modal-heading">
+      <span class="ev-eyebrow">YOUR FOREVER STARTS HERE</span>
+      <h2 id="loginTitle">Welcome <em>back.</em></h2>
+      <p class="login-sub">Sign in to continue planning your beautiful day.</p>
+      <div class="ev-ornament"><span></span>❦<span></span></div>
+    </div>
+
+    <div class="roles">
+      <button type="button" class="role-card active" data-role="couple"
+              aria-pressed="true">
+        <span class="ev-role-icon">♡</span>
+        <span><strong>Couple</strong><small>Plan our wedding</small></span>
+        <span class="ev-role-check">✓</span>
+      </button>
+
+      <button type="button" class="role-card" data-role="planner"
+              aria-pressed="false">
+        <span class="ev-role-icon">✧</span>
+        <span><strong>Planner</strong><small>Manage celebrations</small></span>
+        <span class="ev-role-check">✓</span>
+      </button>
+    </div>
+
+    <form id="loginForm" novalidate>
+
+      <div class="ev-field">
+        <label id="emailLabel" for="email">Email Address</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">✉</span>
+          <input id="email" name="email" type="email"
+                 placeholder="you@example.com" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="ev-field">
+        <label for="password">Password</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">♧</span>
+          <input id="password" name="password" type="password"
+                 placeholder="Enter your password"
+                 autocomplete="current-password" required>
+          <button type="button" id="pwdToggle" class="ev-password-toggle"
+                  aria-label="Show password"></button>
+        </div>
+      </div>
+
+      <div class="ev-form-options">
+        <label class="check">
+          <input type="checkbox" name="remember">
+          <span>Remember me</span>
+        </label>
+        <a href="contact.html">Need help?</a>
+      </div>
+
+      <p id="loginError" class="ev-message" role="status"
+         aria-live="polite"></p>
+
+      <button class="btn login-btn ev-submit" type="submit">
+        <span id="btnText">Sign in as Couple</span>
+        <span class="ev-submit-arrow">↗</span>
+      </button>
+    </form>
+
+    <div class="ev-modal-switch">
+      New to Stackly?
+      <button type="button" data-open-signup>Create an account ↗</button>
+    </div>
+
+    <p class="ev-modal-footnote">♡ &nbsp; Made for your once-in-a-lifetime.</p>
+  </div>
+</div>
+
+
+<!-- ================= SIGNUP MODAL ================= -->
+
+<div class="modal ev-modal" id="sm" role="dialog"
+     aria-modal="true" aria-labelledby="signupTitle" aria-hidden="true">
+
+  <div class="modal-backdrop" data-close></div>
+
+  <div class="box ev-modal-box ev-signup-box">
+
+    <button class="x" id="signupClose" type="button"
+            aria-label="Close">×</button>
+
+    <div class="ev-modal-brand">
+      <a class="logo" href="index.html">
+          <img src="images/logo.webp"
+               alt="Stackly"
+               class="logo-img">
+      </a>
+    </div>
+
+    <div class="ev-modal-heading">
+      <span class="ev-eyebrow">BEGIN YOUR NEXT CHAPTER</span>
+      <h2 id="signupTitle">Make it <em>forever.</em></h2>
+      <p>Create an account to start planning your perfect celebration.</p>
+      <div class="ev-ornament"><span></span>❦<span></span></div>
+    </div>
+
+    <form id="signupForm" novalidate>
+
+      <div class="ev-field">
+        <label for="name">Full Name</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">♙</span>
+          <input id="name" name="name" type="text"
+                 placeholder="Enter your full name" autocomplete="name" required>
+        </div>
+      </div>
+
+      <div class="ev-field">
+        <label for="signupEmail">Email Address</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">✉</span>
+          <input id="signupEmail" name="email" type="email"
+                 placeholder="you@example.com" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="ev-field">
+        <label for="signupPassword">Create Password</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">♧</span>
+          <input id="signupPassword" name="password" type="password"
+                 placeholder="Create a strong password"
+                 autocomplete="new-password" required>
+          <button type="button" id="togglePassword"
+                  class="ev-password-toggle" aria-label="Show password">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="ev-field">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">♧</span>
+          <input id="confirmPassword" name="confirmPassword" type="password"
+                 placeholder="Re-enter your password"
+                 autocomplete="new-password" required>
+          <button type="button" id="toggleConfirmPassword"
+                  class="ev-password-toggle" aria-label="Show password">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <label class="check-row ev-terms">
+        <input type="checkbox" name="terms" required>
+        <span>I agree to the <a href="terms.html">Terms</a> and
+          <a href="privacy.html">Privacy Policy</a>.</span>
+      </label>
+
+      <button class="btn submit-btn ev-submit" type="submit">
+        <span>Create Account</span>
+        <span class="ev-submit-arrow">↗</span>
+      </button>
+    </form>
+
+    <div class="ev-modal-switch">
+      Already have an account?
+      <button type="button" data-open-login>Sign in ↗</button>
+    </div>
+
+    <p class="ev-modal-footnote">♡ &nbsp; Your story, beautifully yours.</p>
+  </div>
+</div>
+
+    <main>
+      <section class="hero">
+        <div class="hero-img">
+          <img
+            class=""
+            loading="lazy"
+            src="images/img1.webp"
+            alt="Wedding moment"
+            onerror="this.style.background = '#c9a24b'"
+          />
+        </div>
+        <div class="hero-in">
+          <p class="kick">Stackly Wedding Planners</p>
+          <h1>Where every love story becomes a celebration</h1>
+          <p>
+            Full-service wedding planning, from the first save-the-date to the
+            last blessing.
+          </p>
+          <a class="btn" href="error.html">Plan my wedding</a>
+          <a class="btn ghost" href="error.html">View gallery</a>
+        </div>
+        <div class="scroll">Scroll</div>
+      </section>
+
+<!-- ================================================================ -->
+
+      <section class="sec ivory" id="count">
+        <div class="wrap">
+          <header class="sh reveal">
+            <h2>Counting down to your day</h2>
+            <div class="orn"><i></i>❦<i></i></div>
+            <p>Pick your wedding date and watch the days gather.</p>
+          </header>
+          <div class="count reveal">
+            <input type="date" id="wd" />
+            <div id="cd">
+              <div><b>--</b>Days</div>
+              <div><b>--</b>Hours</div>
+              <div><b>--</b>Mins</div>
+              <div><b>--</b>Secs</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- ================================================================ -->
+
+      <section class="sec blush" id="">
+        <div class="wrap">
+          <header class="sh reveal">
+            <h2>Planning with heart</h2>
+            <div class="orn"><i></i>❦<i></i></div>
+            <p>
+              We design weddings around your story, not a template. Every detail
+              is chosen, tested and rehearsed.
+            </p>
+          </header>
+          <div class="split">
+            <div class="reveal">
+              <div class="frame">
+                <img
+                  class=""
+                  loading="lazy"
+                  src="images/img2.webp"
+                  alt="Wedding moment"
+                  onerror="this.style.background = '#c9a24b'"
+                />
+              </div>
+            </div>
+            <div class="reveal">
+              <p>
+                Our planners have delivered over 850 weddings across South India
+                and destination venues. We combine traditional rituals with
+                modern styling.
+              </p>
+              <ul class="ticks">
+                <li>Dedicated planner from day one</li>
+                <li>Transparent vendor pricing</li>
+                <li>Backup plans for every outdoor event</li>
+              </ul>
+              <a class="btn" href="error.html">Meet the team</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- ================================================================ -->
+
+      <section class="sec champ" id="">
+        <div class="wrap">
+          <header class="sh reveal">
+            <h2>What we plan</h2>
+            <div class="orn"><i></i>❦<i></i></div>
+            <p>Six services, one seamless celebration.</p>
+          </header>
+          <div class="grid">
+            <article class="card reveal">
+              <span class="ic">💐</span>
+              <h3>Floral & Décor</h3>
+              <p>Mandaps, aisles and centerpieces built around your palette.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ic">🍽️</span>
+              <h3>Catering</h3>
+              <p>
+                Tasting sessions and menus from multi-cuisine to traditional
+                feasts.
+              </p>
+            </article>
+            <article class="card reveal">
+              <span class="ic">📸</span>
+              <h3>Photo & Film</h3>
+              <p>Candid storytellers and cinematic highlight reels.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ic">🏰</span>
+              <h3>Venue Search</h3>
+              <p>
+                Palaces, beaches, gardens and banquet halls matched to your
+                guest list.
+              </p>
+            </article>
+            <article class="card reveal">
+              <span class="ic">🎶</span>
+              <h3>Music & Emcee</h3>
+              <p>Live bands, DJs, sangeet choreography and a polished MC.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ic">💍</span>
+              <h3>Day-of Coordination</h3>
+              <p>A team on the ground so you only enjoy the day.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+<!-- ======================================================================== -->
+
+<section class="featured-weddings">
+  <div class="wrap">
+    <header class="sh reveal">
+      <p class="fw-kicker">A GLIMPSE INTO OUR WORLD</p>
+      <h2>Love Stories We've Brought to Life</h2>
+      <div class="orn"><i></i>❦<i></i></div>
+      <p>Every celebration is different. Every memory is forever.</p>
+    </header>
+
+    <div class="wedding-gallery">
+      <article class="wedding-card wedding-large reveal">
+        <img
+          src="images/img1.webp"
+          alt="Elegant wedding celebration"
+          loading="lazy"
+        >
+        <div class="wedding-overlay">
+          <span>DESTINATION WEDDING</span>
+          <h3>A Celebration of Forever</h3>
+          <p>Romance • Elegance • Timeless Memories</p>
+          <a href="error.html">Explore the story ↗</a>
+        </div>
+      </article>
+
+      <article class="wedding-card reveal">
+        <img
+          src="images/img3.webp"
+          alt="Beautiful wedding ceremony"
+          loading="lazy"
+        >
+        <div class="wedding-overlay">
+          <span>THE WEDDING DAY</span>
+          <h3>Moments of Magic</h3>
+          <a href="error.html">View moments ↗</a>
+        </div>
+      </article>
+
+      <article class="wedding-card reveal">
+        <img
+          src="images/img4.webp"
+          alt="Romantic wedding table styling"
+          loading="lazy"
+        >
+        <div class="wedding-overlay">
+          <span>DETAILS THAT MATTER</span>
+          <h3>Designed with Love</h3>
+          <a href="error.html">Discover our style ↗</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Our planning journey -->
+
+      <section class="sec wine dk" id="">
+        <div class="wrap">
+          <header class="sh reveal">
+            <h2>Our planning journey</h2>
+            <div class="orn"><i></i>❦<i></i></div>
+            <p>Four steps from hello to happily ever after.</p>
+          </header>
+          <ol class="tl">
+            <li class="reveal">
+              <h3>Discover</h3>
+              <p>We learn your story, culture, guest list and budget.</p>
+            </li>
+            <li class="reveal">
+              <h3>Design</h3>
+              <p>Mood boards, venue visits and vendor shortlists.</p>
+            </li>
+            <li class="reveal">
+              <h3>Deliver</h3>
+              <p>Bookings, schedules, rehearsals and fittings.</p>
+            </li>
+            <li class="reveal">
+              <h3>Celebrate</h3>
+              <p>We run the day while you make memories.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+<!-- ============================================================================== -->
+
+      <section class="sec ivory" id="">
+        <div class="wrap">
+          <header class="sh reveal">
+            <h2>Numbers we are proud of</h2>
+            <div class="orn"><i></i>❦<i></i></div>
+            <p>A track record built one celebration at a time.</p>
+          </header>
+          <div class="stats">
+            <div class="stat reveal">
+              <b data-count="850">0</b><span>Weddings planned</span>
+            </div>
+            <div class="stat reveal">
+              <b data-count="120">0</b><span>Trusted vendors</span>
+            </div>
+            <div class="stat reveal">
+              <b data-count="15">0</b><span>Years of experience</span>
+            </div>
+            <div class="stat reveal">
+              <b data-count="98">0</b><span>% happy couples</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- ============================================================================== -->
+
+<section class="luxury-experience">
+  <div class="luxury-experience-inner reveal">
+    <span class="luxury-line">THE Stackly EXPERIENCE</span>
+
+    <h2>Not Just a Wedding.<br>A Legacy of Love.</h2>
+
+    <div class="orn"><i></i>❦<i></i></div>
+
+    <p>
+      From the first flower to the final farewell, we transform
+      your vision into a celebration filled with beauty,
+      meaning and unforgettable moments.
+    </p>
+
+    <a href="error.html" class="btn">Discover Our Philosophy</a>
+  </div>
+</section>
+
+<!-- ============================================================================== -->
+
+      <section class="sec blush" id="">
+        <div class="wrap">
+          <header class="sh reveal">
+            <h2>Words from our couples</h2>
+            <div class="orn"><i></i>❦<i></i></div>
+            <p>Real stories from real weddings.</p>
+          </header>
+          <div class="grid">
+            <article class="card reveal">
+              <span class="ic">💬</span>
+              <h3>Aarthi & Karthik</h3>
+              <p>
+                They handled 400 guests, two ceremonies and one monsoon shower
+                without us noticing a single problem.
+              </p>
+            </article>
+            <article class="card reveal">
+              <span class="ic">💬</span>
+              <h3>Meera & Rohan</h3>
+              <p>
+                Our mandap looked like a dream and the budget tracker kept every
+                rupee in view.
+              </p>
+            </article>
+            <article class="card reveal">
+              <span class="ic">💬</span>
+              <h3>Sofia & James</h3>
+              <p>
+                From the first call to the last dance, the team felt like
+                family.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+<!-- ============================================================================== -->
+
+<section class="dream-cta">
+  <div class="dream-cta-content reveal">
+    <span>YOUR FOREVER STARTS HERE</span>
+    <h2>Let's Create Something Beautiful</h2>
+    <p>
+      Your dream wedding deserves thoughtful planning,
+      extraordinary details and a team that cares.
+    </p>
+    <a href="error.html" class="btn">
+      Begin Your Wedding Journey ↗
+    </a>
+  </div>
+</section>
+
+    </main>
+
+<!-- ==================== Footer ==================== -->
+
+
+<footer class="site-footer wedding-footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img
+            src="images/logo.webp"
+            alt="Wedding Planner"
+            class="brand-logo"
+          >
+        </a>
+
+        <p>
+          Creating unforgettable weddings filled with love,
+          elegance, and beautiful little moments. From the first
+          idea to your final farewell, we make your dream day real.
+        </p>
+
+        <div class="footer-social">
+          <a href="error.html" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="error.html" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="error.html" aria-label="X">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="error.html" aria-label="Pinterest">
+            <i class="fa-brands fa-pinterest-p"></i>
+          </a>
+          <a href="error.html" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services.html">Wedding Planning</a></li>
+          <li><a href="services.html">Venue Selection</a></li>
+          <li><a href="services.html">Wedding Décor</a></li>
+          <li><a href="services.html">Photography</a></li>
+          <li><a href="services.html">Entertainment</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Wedding Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-col footer-news">
+        <h4>Let's Stay Connected</h4>
+        <p>
+          Get wedding inspiration, planning tips, and a little
+          romance delivered to your inbox.
+        </p>
+
+        <form class="footer-news-form"
+              onsubmit="window.location.href='error.html'; return false;">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            aria-label="Email address"
+            required
+          >
+          <button type="submit" aria-label="Subscribe">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+
+        <span class="footer-note">
+          <i class="fa-regular fa-heart"></i>
+          Made for your happily ever after.
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <span>
+        &copy; <span id="footer-year"></span>
+        Wedding Planner. All rights reserved.
+      </span>
+
+      <span class="footer-credit">
+        Crafted with <i class="fa-solid fa-heart"></i> for love stories.
+      </span>
+    </div>
+
+  </div>
+</footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/signup.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

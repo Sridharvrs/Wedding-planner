@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact | Stackly Wedding Planner</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+  <body class="p-contact">
+    <div class="strip">
+      <span>✦ Now booking 2026–27 wedding dates ✦ Free consultation ✦</span>
+    </div>
+    <header class="nav">
+      <a class="logo" href="index.html">
+        <img src="images/logo.webp"
+             alt="Stackly"
+             class="logo-img">
+      </a>
+      <button class="burger" aria-label="Menu" aria-expanded="false">
+        <i></i><i></i><i></i>
+      </button>
+      <nav class="menu">
+        <div class="menu-top">❦ Menu ❦</div>
+        <a href="index.html" class="">Home</a
+        ><a href="about.html" class="">About</a
+        ><a href="services.html" class="">Services</a
+        ><a href="gallery.html" class="">Gallery</a
+        ><a href="contact.html" class="on">Contact</a
+        ><button class="btn login-btn" data-login>Login</button>
+      </nav>
+    </header>
+    <div class="shade"></div>
+
+<!-- ================= LOGIN MODAL ================= -->
+
+<div class="modal ev-modal" id="lm" role="dialog"
+     aria-modal="true" aria-labelledby="loginTitle" aria-hidden="true">
+
+  <div class="modal-backdrop" data-close></div>
+
+  <div class="box ev-modal-box">
+
+    <button class="x" type="button" aria-label="Close" data-close>×</button>
+
+    <div class="ev-modal-brand">
+      <a class="logo" href="index.html">
+          <img src="images/logo.webp"
+               alt="Stackly"
+               class="logo-img">
+      </a>
+    </div>
+
+    <div class="ev-modal-heading">
+      <span class="ev-eyebrow">YOUR FOREVER STARTS HERE</span>
+      <h2 id="loginTitle">Welcome <em>back.</em></h2>
+      <p class="login-sub">Sign in to continue planning your beautiful day.</p>
+      <div class="ev-ornament"><span></span>❦<span></span></div>
+    </div>
+
+    <div class="roles">
+      <button type="button" class="role-card active" data-role="couple"
+              aria-pressed="true">
+        <span class="ev-role-icon">♡</span>
+        <span><strong>Couple</strong><small>Plan our wedding</small></span>
+        <span class="ev-role-check">✓</span>
+      </button>
+
+      <button type="button" class="role-card" data-role="planner"
+              aria-pressed="false">
+        <span class="ev-role-icon">✧</span>
+        <span><strong>Planner</strong><small>Manage celebrations</small></span>
+        <span class="ev-role-check">✓</span>
+      </button>
+    </div>
+
+    <form id="loginForm" novalidate>
+
+      <div class="ev-field">
+        <label id="emailLabel" for="email">Email Address</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">✉</span>
+          <input id="email" name="email" type="email"
+                 placeholder="you@example.com" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="ev-field">
+        <label for="password">Password</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">♧</span>
+          <input id="password" name="password" type="password"
+                 placeholder="Enter your password"
+                 autocomplete="current-password" required>
+          <button type="button" id="pwdToggle" class="ev-password-toggle"
+                  aria-label="Show password"></button>
+        </div>
+      </div>
+
+      <div class="ev-form-options">
+        <label class="check">
+          <input type="checkbox" name="remember">
+          <span>Remember me</span>
+        </label>
+        <a href="contact.html">Need help?</a>
+      </div>
+
+      <p id="loginError" class="ev-message" role="status"
+         aria-live="polite"></p>
+
+      <button class="btn login-btn ev-submit" type="submit">
+        <span id="btnText">Sign in as Couple</span>
+        <span class="ev-submit-arrow">↗</span>
+      </button>
+    </form>
+
+    <div class="ev-modal-switch">
+      New to Stackly?
+      <button type="button" data-open-signup>Create an account ↗</button>
+    </div>
+
+    <p class="ev-modal-footnote">♡ &nbsp; Made for your once-in-a-lifetime.</p>
+  </div>
+</div>
+
+
+<!-- ================= SIGNUP MODAL ================= -->
+
+<div class="modal ev-modal" id="sm" role="dialog"
+     aria-modal="true" aria-labelledby="signupTitle" aria-hidden="true">
+
+  <div class="modal-backdrop" data-close></div>
+
+  <div class="box ev-modal-box ev-signup-box">
+
+    <button class="x" id="signupClose" type="button"
+            aria-label="Close">×</button>
+
+    <div class="ev-modal-brand">
+      <a class="logo" href="index.html">
+          <img src="images/logo.webp"
+               alt="Stackly"
+               class="logo-img">
+      </a>
+    </div>
+
+    <div class="ev-modal-heading">
+      <span class="ev-eyebrow">BEGIN YOUR NEXT CHAPTER</span>
+      <h2 id="signupTitle">Make it <em>forever.</em></h2>
+      <p>Create an account to start planning your perfect celebration.</p>
+      <div class="ev-ornament"><span></span>❦<span></span></div>
+    </div>
+
+    <form id="signupForm" novalidate>
+
+      <div class="ev-field">
+        <label for="name">Full Name</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">♙</span>
+          <input id="name" name="name" type="text"
+                 placeholder="Enter your full name" autocomplete="name" required>
+        </div>
+      </div>
+
+      <div class="ev-field">
+        <label for="signupEmail">Email Address</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">✉</span>
+          <input id="signupEmail" name="email" type="email"
+                 placeholder="you@example.com" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="ev-field">
+        <label for="signupPassword">Create Password</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">♧</span>
+          <input id="signupPassword" name="password" type="password"
+                 placeholder="Create a strong password"
+                 autocomplete="new-password" required>
+          <button type="button" id="togglePassword"
+                  class="ev-password-toggle" aria-label="Show password">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="ev-field">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="ev-input-wrap">
+          <span class="ev-field-icon">♧</span>
+          <input id="confirmPassword" name="confirmPassword" type="password"
+                 placeholder="Re-enter your password"
+                 autocomplete="new-password" required>
+          <button type="button" id="toggleConfirmPassword"
+                  class="ev-password-toggle" aria-label="Show password">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <label class="check-row ev-terms">
+        <input type="checkbox" name="terms" required>
+        <span>I agree to the <a href="terms.html">Terms</a> and
+          <a href="privacy.html">Privacy Policy</a>.</span>
+      </label>
+
+      <button class="btn submit-btn ev-submit" type="submit">
+        <span>Create Account</span>
+        <span class="ev-submit-arrow">↗</span>
+      </button>
+    </form>
+
+    <div class="ev-modal-switch">
+      Already have an account?
+      <button type="button" data-open-login>Sign in ↗</button>
+    </div>
+
+    <p class="ev-modal-footnote">♡ &nbsp; Your story, beautifully yours.</p>
+  </div>
+</div>
+
+    <main>
+
+      <section class="hero">
+        <div class="hero-img">
+          <img
+            class=""
+            loading="lazy"
+            src="images/img11.webp"
+            alt="Wedding moment"
+            onerror="this.style.background = '#c9a24b'"
+            
+          />
+        </div>
+        <div class="hero-in">
+          <p class="kick">Stackly Wedding Planners</p>
+          <h1>Let us plan your wedding</h1>
+          <p>Tell us about your date, dreams and guest list.</p>
+        </div>
+        <div class="scroll">Scroll</div>
+      </section>
+
+<!-- ============================= FORM ============================ -->
+
+<section class="sec ivory premium-enquiry" id="enquiry">
+  <div class="wrap">
+
+    <header class="sh reveal">
+      <span class="enquiry-eyebrow">LET'S CREATE SOMETHING BEAUTIFUL</span>
+      <h2>Tell Us Your Love Story</h2>
+      <div class="orn"><i></i>❦<i></i></div>
+      <p>Every unforgettable wedding begins with a conversation.</p>
+    </header>
+
+    <div class="enquiry-layout">
+
+      <!-- Left information panel -->
+      <aside class="enquiry-info reveal">
+        <span class="info-number">01 — YOUR SPECIAL DAY</span>
+
+        <h3>Your dream wedding<br>starts right here.</h3>
+
+        <p class="info-desc">
+          Share your vision with us. From intimate celebrations
+          to grand destination weddings, we'll help you bring
+          every beautiful detail to life.
+        </p>
+
+        <div class="enquiry-divider"></div>
+
+        <div class="enquiry-contact-item">
+          <span class="contact-icon">
+            <i class="fa-regular fa-envelope"></i>
+          </span>
+          <div>
+            <span class="contact-label">WRITE TO US</span>
+            <p>hello@yourwedding.com</p>
+          </div>
+        </div>
+
+        <div class="enquiry-contact-item">
+          <span class="contact-icon">
+            <i class="fa-solid fa-phone"></i>
+          </span>
+          <div>
+            <span class="contact-label">LET'S TALK</span>
+            <p>+91 98765 43210</p>
+          </div>
+        </div>
+
+        <div class="enquiry-contact-item">
+          <span class="contact-icon">
+            <i class="fa-regular fa-clock"></i>
+          </span>
+          <div>
+            <span class="contact-label">OUR RESPONSE TIME</span>
+            <p>Within 24 business hours</p>
+          </div>
+        </div>
+
+        <div class="enquiry-quote">
+          <span class="quote-mark">“</span>
+          <p>
+            The best weddings aren't just planned.
+            They're felt, remembered, and cherished forever.
+          </p>
+          <span class="quote-flourish">With love, always.</span>
+        </div>
+      </aside>
+
+      <!-- Right enquiry form -->
+      <div class="enquiry-form-panel reveal">
+        <div class="form-heading">
+          <div>
+            <span class="form-step">YOUR JOURNEY BEGINS HERE</span>
+            <h3>Plan your celebration</h3>
+          </div>
+          <span class="form-flower">❦</span>
+        </div>
+
+        <form class="form premium-form" id="cf" novalidate>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="enq-name">Your full name <span>*</span></label>
+              <input
+                id="enq-name"
+                name="n"
+                type="text"
+                placeholder="e.g. Priya Sharma"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="enq-email">Email address <span>*</span></label>
+              <input
+                id="enq-email"
+                name="e"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="enq-phone">Phone number <span>*</span></label>
+              <input
+                id="enq-phone"
+                name="p"
+                type="tel"
+                placeholder="+91 98765 43210"
+                autocomplete="tel"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="enq-date">Wedding date</label>
+              <input
+                id="enq-date"
+                name="weddingDate"
+                type="date"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="enq-location">Wedding location</label>
+              <input
+                id="enq-location"
+                name="location"
+                type="text"
+                placeholder="City or destination"
+              />
+            </div>
+
+            <div class="field">
+              <label for="enq-guests">Expected guests</label>
+              <select id="enq-guests" name="guests">
+                <option value="">Select guest count</option>
+                <option value="Below 50">Below 50</option>
+                <option value="50–100">50–100 guests</option>
+                <option value="100–250">100–250 guests</option>
+                <option value="250–500">250–500 guests</option>
+                <option value="500+">500+ guests</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="enq-service">What are you dreaming of?</label>
+            <select id="enq-service" name="service">
+              <option value="">Choose a wedding service</option>
+              <option value="Full Wedding Planning">Full Wedding Planning</option>
+              <option value="Venue and Destination">Venue & Destination</option>
+              <option value="Wedding Decoration">Wedding Decoration</option>
+              <option value="Photography and Videography">Photography & Videography</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Complete Wedding Package">Complete Wedding Package</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="enq-message">Tell us about your vision</label>
+            <textarea
+              id="enq-message"
+              name="message"
+              rows="4"
+              placeholder="Your ideas, preferred style, budget, or anything you'd love us to know..."
+            ></textarea>
+          </div>
+
+          <button class="btn enquiry-submit" type="submit">
+            <span>Send your enquiry</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <p class="form-privacy">
+            <i class="fa-solid fa-lock"></i>
+            Your details are treated with care and confidentiality.
+          </p>
+
+          <p id="fm" role="status" aria-live="polite"></p>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================================== -->
+
+<section class="sec blush reach-premium" id="reach-us">
+  <div class="wrap">
+
+    <header class="sh reveal reach-heading">
+      <span class="reach-eyebrow">WE WOULD LOVE TO HEAR FROM YOU</span>
+      <h2>Let's Start Your <em>Forever</em></h2>
+      <div class="orn"><i></i>❦<i></i></div>
+      <p>Every beautiful celebration begins with a conversation. Reach out and let's make your wedding dreams come true.</p>
+    </header>
+
+    <div class="reach-grid">
+
+      <article class="reach-card reveal">
+        <span class="reach-icon"><i class="fa-solid fa-location-dot"></i></span>
+        <span class="reach-number">01</span>
+        <h3>Visit Our Studio</h3>
+        <p>12 Race Course Road,<br>Coimbatore, Tamil Nadu</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=12+Race+Course+Road+Coimbatore+Tamil+Nadu" target="_blank" rel="noopener noreferrer" class="reach-link">
+          Find our studio <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </article>
+
+      <article class="reach-card reveal">
+        <span class="reach-icon"><i class="fa-solid fa-phone"></i></span>
+        <span class="reach-number">02</span>
+        <h3>Let's Talk</h3>
+        <p>Have an idea or a question?<br>We are happy to help.</p>
+        <a href="tel:+919876543210" class="reach-link">
+          +91 98765 43210 <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </article>
+
+      <article class="reach-card reveal">
+        <span class="reach-icon"><i class="fa-regular fa-envelope"></i></span>
+        <span class="reach-number">03</span>
+        <h3>Write to Us</h3>
+        <p>Tell us about your celebration.<br>We would love to hear your story.</p>
+        <a href="mailto:hello@eternalvows.in" class="reach-link">
+          Send an email <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </article>
+
+      <article class="reach-card reveal">
+        <span class="reach-icon"><i class="fa-regular fa-clock"></i></span>
+        <span class="reach-number">04</span>
+        <h3>Studio Hours</h3>
+        <p>Monday – Saturday<br>9:30 AM – 7:00 PM</p>
+        <span class="reach-status">
+          <span class="reach-status-dot"></span>
+          By appointment preferred
+        </span>
+      </article>
+
+    </div>
+
+    <div class="reach-note reveal">
+      <span class="reach-note-icon">❦</span>
+      <p>Your love story is unique. Your celebration should be, too.</p>
+      <a href="contact.html">Plan your wedding <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================================== -->
+
+<section class="sec champ enquiry-journey">
+  <div class="wrap">
+
+    <header class="sh reveal">
+      <p class="enquiry-kicker">YOUR STORY STARTS HERE</p>
+      <h2>What happens next</h2>
+      <div class="orn"><i></i>❦<i></i></div>
+      <p>
+        From your first enquiry to your dream wedding, every step
+        is thoughtfully planned around you.
+      </p>
+    </header>
+
+    <div class="enquiry-timeline">
+
+      <article class="enquiry-step reveal">
+        <div class="enquiry-number">
+          <span>01</span>
+        </div>
+        <div class="enquiry-card">
+          <span class="enquiry-label">THE FIRST HELLO</span>
+          <h3>Your enquiry</h3>
+          <p>
+            Tell us about your love story, your wedding dreams
+            and the celebration you have in mind.
+          </p>
+          <span class="enquiry-icon">♡</span>
+        </div>
+      </article>
+
+      <article class="enquiry-step reveal">
+        <div class="enquiry-number">
+          <span>02</span>
+        </div>
+        <div class="enquiry-card">
+          <span class="enquiry-label">LET'S CONNECT</span>
+          <h3>A personal conversation</h3>
+          <p>
+            Your dedicated planner connects with you to understand
+            your preferences, priorities and budget.
+          </p>
+          <span class="enquiry-icon">✧</span>
+        </div>
+      </article>
+
+      <article class="enquiry-step reveal">
+        <div class="enquiry-number">
+          <span>03</span>
+        </div>
+        <div class="enquiry-card">
+          <span class="enquiry-label">PICTURE THE POSSIBILITIES</span>
+          <h3>Meet your planner</h3>
+          <p>
+            Explore ideas, discuss venues and discover the details
+            that will make your celebration truly yours.
+          </p>
+          <span class="enquiry-icon">❦</span>
+        </div>
+      </article>
+
+      <article class="enquiry-step reveal">
+        <div class="enquiry-number">
+          <span>04</span>
+        </div>
+        <div class="enquiry-card">
+          <span class="enquiry-label">YOUR DREAM TAKES SHAPE</span>
+          <h3>Receive your proposal</h3>
+          <p>
+            We bring your ideas together in a personalised proposal
+            with a clear plan for your next steps.
+          </p>
+          <span class="enquiry-icon">∞</span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="enquiry-note reveal">
+      <span>✦</span>
+      <p>Thoughtfully planned. Beautifully remembered. Entirely yours.</p>
+      <span>✦</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================================== -->
+      <section class="sec wine dk" id="">
+        <div class="wrap">
+          <header class="sh reveal">
+            <h2>Frequently asked</h2>
+            <div class="orn"><i></i>❦<i></i></div>
+            <p>Before you reach out.</p>
+          </header>
+          <div class="faq">
+            <details class="reveal">
+              <summary>Is the consultation free?</summary>
+              <p>Yes, the first 30 minutes are free.</p>
+            </details>
+            <details class="reveal">
+              <summary>Do you travel?</summary>
+              <p>We plan across India and abroad.</p>
+            </details>
+            <details class="reveal">
+              <summary>Can we meet online?</summary>
+              <p>Yes, by video call.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+<!-- ===================================== -->
+<section class="sec ivory social-premium" id="follow-us">
+  <div class="wrap">
+
+    <header class="sh reveal social-heading">
+      <span class="social-eyebrow">LOVE, THROUGH OUR LENS</span>
+      <h2>Follow Our <em>Weddings</em></h2>
+      <div class="orn"><i></i>❦<i></i></div>
+      <p>Little details, unforgettable moments, and beautiful love stories. Find your daily dose of wedding inspiration.</p>
+    </header>
+
+    <div class="social-grid">
+
+      <!-- Instagram -->
+      <article class="social-card social-instagram reveal">
+        <div class="social-card-top">
+          <span class="social-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </span>
+          <span class="social-count">01 / SOCIAL</span>
+        </div>
+
+        <span class="social-label">BEHIND THE MAGIC</span>
+        <h3>Instagram</h3>
+        <p>From dreamy decor to candid emotions, discover the little moments that make every wedding unforgettable.</p>
+
+        <div class="social-tags">
+          <span>Wedding Reels</span>
+          <span>Real Moments</span>
+        </div>
+
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+          Explore Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+        <span class="social-watermark">I</span>
+      </article>
+
+      <!-- YouTube -->
+      <article class="social-card social-youtube reveal">
+        <div class="social-card-top">
+          <span class="social-icon">
+            <i class="fa-brands fa-youtube"></i>
+          </span>
+          <span class="social-count">02 / STORIES</span>
+        </div>
+
+        <span class="social-label">MOMENTS THAT LAST</span>
+        <h3>YouTube</h3>
+        <p>Relive heartfelt vows, grand celebrations, and cinematic wedding films made to be watched again and again.</p>
+
+        <div class="social-tags">
+          <span>Wedding Films</span>
+          <span>Love Stories</span>
+        </div>
+
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+          Watch Our Stories <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+        <span class="social-watermark">Y</span>
+      </article>
+
+      <!-- Pinterest -->
+      <article class="social-card social-pinterest reveal">
+        <div class="social-card-top">
+          <span class="social-icon">
+            <i class="fa-brands fa-pinterest-p"></i>
+          </span>
+          <span class="social-count">03 / INSPIRATION</span>
+        </div>
+
+        <span class="social-label">DREAM IT BEAUTIFULLY</span>
+        <h3>Pinterest</h3>
+        <p>Collect enchanting palettes, floral details, bridal looks, and decor ideas for your own once-in-a-lifetime day.</p>
+
+        <div class="social-tags">
+          <span>Mood Boards</span>
+          <span>Wedding Ideas</span>
+        </div>
+
+        <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+          Discover Ideas <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+        <span class="social-watermark">P</span>
+      </article>
+
+    </div>
+
+    <div class="social-bottom reveal">
+      <span class="social-bottom-flower">❦</span>
+      <p>Every love story deserves to be celebrated.</p>
+      <span class="social-bottom-caption">SHARE THE LOVE · SAVE THE INSPIRATION</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================================== -->
+      <section class="sec cta">
+        <div class="wrap reveal">
+          <h2>Ready to plan your forever?</h2>
+          <p>
+            Book a free 30-minute consultation and walk away with a draft plan.
+          </p>
+          <a class="btn" href="error.html">Book consultation</a>
+        </div>
+      </section>
+    </main>
+
+<!-- ==================== Footer ==================== -->
+
+
+<footer class="site-footer wedding-footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img
+            src="images/logo.webp"
+            alt="Wedding Planner"
+            class="brand-logo"
+          >
+        </a>
+
+        <p>
+          Creating unforgettable weddings filled with love,
+          elegance, and beautiful little moments. From the first
+          idea to your final farewell, we make your dream day real.
+        </p>
+
+        <div class="footer-social">
+          <a href="error.html" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="error.html" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="error.html" aria-label="X">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="error.html" aria-label="Pinterest">
+            <i class="fa-brands fa-pinterest-p"></i>
+          </a>
+          <a href="error.html" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services.html">Wedding Planning</a></li>
+          <li><a href="services.html">Venue Selection</a></li>
+          <li><a href="services.html">Wedding Décor</a></li>
+          <li><a href="services.html">Photography</a></li>
+          <li><a href="services.html">Entertainment</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Wedding Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-col footer-news">
+        <h4>Let's Stay Connected</h4>
+        <p>
+          Get wedding inspiration, planning tips, and a little
+          romance delivered to your inbox.
+        </p>
+
+        <form class="footer-news-form"
+              onsubmit="window.location.href='error.html'; return false;">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            aria-label="Email address"
+            required
+          >
+          <button type="submit" aria-label="Subscribe">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+
+        <span class="footer-note">
+          <i class="fa-regular fa-heart"></i>
+          Made for your happily ever after.
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <span>
+        &copy; <span id="footer-year"></span>
+        Wedding Planner. All rights reserved.
+      </span>
+
+      <span class="footer-credit">
+        Crafted with <i class="fa-solid fa-heart"></i> for love stories.
+      </span>
+    </div>
+
+  </div>
+</footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/signup.js"></script>
+    <script src="js/contact.js"></script>
+  </body>
+</html>

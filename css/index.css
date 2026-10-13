@@ -1,0 +1,267 @@
+.card {
+  background: #fff3dc;
+  color: #4a1230;
+  border: 4px double #b8860b;
+  border-radius: 18px;
+}
+.card h3 {
+  color: #4a1230;
+}
+.card p {
+  color: #4a1230;
+}
+/* .hero h1 {
+} */
+
+
+
+
+/* ===== FEATURED WEDDING STORIES ===== */
+.featured-weddings {
+  padding: 90px 0;
+  background:
+    linear-gradient(#fff8eeef, #fff8eeee),
+    url("../images/img5.webp")
+    center/cover fixed;
+}
+
+.fw-kicker {
+  color: #a46c29;
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: 500;
+}
+
+.wedding-gallery {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 24px;
+}
+
+.wedding-card {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+  border: 2px solid #b8860b;
+  border-radius: 18px;
+  isolation: isolate;
+  background: #2a0a1c;
+  box-shadow: 0 15px 35px #4a123020;
+}
+
+.wedding-large {
+  grid-row: span 2;
+  min-height: 664px;
+}
+
+.wedding-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+  z-index: -2;
+}
+
+.wedding-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 15%,
+    #21081755 48%,
+    #210817f2 100%
+  );
+  z-index: -1;
+}
+
+.wedding-card:hover img {
+  transform: scale(1.08);
+}
+
+.wedding-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 30px;
+  color: #fff;
+}
+
+.wedding-overlay span {
+  color: #f2cf80;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.wedding-overlay h3 {
+  color: #fff3dc;
+  font-size: clamp(25px, 3vw, 38px);
+  margin: 10px 0;
+}
+
+.wedding-overlay p {
+  font-size: 14px;
+  color: #f6e8e9;
+  margin-bottom: 15px;
+}
+
+.wedding-overlay a {
+  color: #f2cf80;
+  text-decoration: none;
+  border-bottom: 1px solid #f2cf80;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.wedding-overlay a:hover {
+  color: #fff;
+}
+
+/* ===== LUXURY EXPERIENCE ===== */
+.luxury-experience {
+  position: relative;
+  min-height: 510px;
+  display: grid;
+  place-items: center;
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+  background:
+    linear-gradient(90deg, #250715dc, #4a1230a6, #250715dc),
+    url("../images/img6.webp")
+    center 45%/cover no-repeat;
+  background-attachment: fixed;
+}
+
+.luxury-experience-inner {
+  max-width: 780px;
+}
+
+.luxury-line {
+  color: #f2cf80;
+  letter-spacing: 5px;
+  font-size: 12px;
+}
+
+.luxury-experience h2 {
+  color: #fff3dc;
+  font-size: clamp(38px, 6vw, 66px);
+  margin: 20px 0;
+}
+
+.luxury-experience p {
+  max-width: 650px;
+  margin: 0 auto 28px;
+  font-size: 18px;
+  color: #fff1f1;
+}
+
+/* ===== DREAM WEDDING CTA ===== */
+
+.dream-cta {
+  position: relative;
+  padding: 90px 20px;
+  text-align: center;
+  color: #fff;
+  background:
+    linear-gradient(90deg, #2a0a1cf0, #4a1230b8, #2a0a1cf0),
+    url("../images/img5.webp")
+    center/cover no-repeat;
+}
+
+.dream-cta-content {
+  max-width: 780px;
+  margin: auto;
+}
+
+.dream-cta-content > span {
+  display: block;
+  color: #f2cf80;
+  letter-spacing: 4px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.dream-cta h2 {
+  color: #fff3dc;
+  font-size: clamp(36px, 5.5vw, 62px);
+}
+
+.dream-cta p {
+  max-width: 620px;
+  margin: 18px auto 28px;
+  color: #fff0f2;
+  font-size: 18px;
+}
+
+.dream-cta .btn {
+  margin: 5px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+  .featured-weddings {
+    padding: 60px 0;
+    background-attachment: scroll;
+  }
+
+  .wedding-gallery {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .wedding-card,
+  .wedding-large {
+    min-height: 360px;
+    grid-row: auto;
+  }
+
+  .wedding-overlay {
+    padding: 22px;
+  }
+
+  .luxury-experience {
+    min-height: 430px;
+    background-attachment: scroll;
+  }
+
+  .luxury-line,
+  .dream-cta-content > span {
+    letter-spacing: 2px;
+  }
+
+  .dream-cta {
+    padding: 65px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wedding-card img {
+    transition: none;
+  }
+}
+
+/* Keep wedding images, overlays and text in the correct layers */
+.wedding-card img {
+  z-index: -2;
+}
+
+.wedding-card::after {
+  z-index: -1;
+  pointer-events: none;
+}
+
+.wedding-overlay {
+  z-index: 1;
+}
+
+/* Avoid fixed backgrounds on touch devices */
+@media (max-width: 900px) {
+  .featured-weddings,
+  .luxury-experience,
+  .dream-cta {
+    background-attachment: scroll;
+  }
+}
+
