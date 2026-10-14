@@ -162,7 +162,9 @@
         <div class="ev-input-wrap">
           <span class="ev-field-icon">♙</span>
           <input id="name" name="name" type="text"
-                 placeholder="Enter your full name" autocomplete="name" required>
+                 placeholder="Enter your full name" autocomplete="name" 
+                 oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')" 
+                 required>
         </div>
       </div>
 
@@ -334,6 +336,7 @@
                 type="text"
                 placeholder="e.g. Priya Sharma"
                 autocomplete="name"
+                oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')"
                 required
               />
             </div>
@@ -360,6 +363,7 @@
                 type="tel"
                 placeholder="+91 98765 43210"
                 autocomplete="tel"
+                oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                 required
               />
             </div>

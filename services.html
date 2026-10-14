@@ -162,7 +162,9 @@
         <div class="ev-input-wrap">
           <span class="ev-field-icon">♙</span>
           <input id="name" name="name" type="text"
-                 placeholder="Enter your full name" autocomplete="name" required>
+                 placeholder="Enter your full name" autocomplete="name" 
+                 oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')" 
+                 required>
         </div>
       </div>
 
@@ -205,8 +207,8 @@
 
       <label class="check-row ev-terms">
         <input type="checkbox" name="terms" required>
-        <span>I agree to the <a href="terms.html">Terms</a> and
-          <a href="privacy.html">Privacy Policy</a>.</span>
+        <span>I agree to the <a href="error.html">Terms</a> and
+          <a href="error.html">Privacy Policy</a>.</span>
       </label>
 
       <button class="btn submit-btn ev-submit" type="submit">
@@ -225,6 +227,9 @@
 </div>
 
     <main>
+
+<!-- ====================================== HERO ============================================== -->
+
       <section class="hero">
         <div class="hero-img">
           <img
@@ -293,7 +298,7 @@
       </section>
 
 
-<!-- PREMIUM WEDDING EXPERIENCE -->
+<!-- ========================= PREMIUM WEDDING EXPERIENCE ========================== -->
 <section class="luxury-experience">
   <div class="luxury-experience-bg"></div>
   <div class="luxury-experience-overlay"></div>

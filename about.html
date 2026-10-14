@@ -167,7 +167,9 @@
         <div class="ev-input-wrap">
           <span class="ev-field-icon">♙</span>
           <input id="name" name="name" type="text"
-                 placeholder="Enter your full name" autocomplete="name" required>
+                 placeholder="Enter your full name" autocomplete="name" 
+                 oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')" 
+                 required>
         </div>
       </div>
 
@@ -231,7 +233,7 @@
 
     <main>
 
-<!-- ======================================================== -->
+<!-- =============================== HERO ============================ -->
 
       <section class="hero">
         <div class="hero-img">
