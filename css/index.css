@@ -265,3 +265,99 @@
   }
 }
 
+
+/* ============================= MEDIA QUERRY =================================== */
+
+
+/* ========================================
+   PLANNING WITH HEART — RESPONSIVE DESIGN
+======================================== */
+
+/* Tablets and small laptops */
+@media (max-width: 992px) {
+  .split {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .frame {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .frame img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .split p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .frame {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .frame img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+  }
+
+  .split > div {
+    min-width: 0;
+  }
+
+  .ticks {
+    padding-left: 22px;
+  }
+
+  .ticks li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .split .btn {
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .split {
+    gap: 20px;
+  }
+
+  .frame img {
+    height: 250px;
+  }
+
+  .sh h2 {
+    font-size: 28px;
+  }
+
+  .sh p,
+  .split p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .ticks li {
+    font-size: 13px;
+  }
+}

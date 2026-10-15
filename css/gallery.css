@@ -726,3 +726,78 @@
         padding: 0px 20px;
     }
 }
+
+
+
+/* ================================ MEDIA QUERRY ================================== */
+
+
+/* ========================================
+   FEATURED PALACE WEDDING — RESPONSIVE
+======================================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .split.rev {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    align-items: center;
+  }
+
+  .split.rev .frame {
+    width: 100%;
+  }
+
+  .split.rev .frame img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .split.rev {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .split.rev > div {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .split.rev .frame img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+  }
+
+  .split.rev p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .split.rev {
+    gap: 18px;
+  }
+
+  .split.rev .frame img {
+    height: 250px;
+  }
+
+  .sh h2 {
+    font-size: 27px;
+    line-height: 1.3;
+  }
+
+  .sh p,
+  .split.rev p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+}

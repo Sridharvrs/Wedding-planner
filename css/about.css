@@ -810,3 +810,81 @@
     box-shadow: 0 0 20px rgba(227, 185, 91, 0.2);
   }
 }
+
+
+/* ==================================== MEDIA QUERRY ==================================== */
+
+
+/* ========================================
+   OUR STORY — RESPONSIVE MEDIA QUERIES
+======================================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    align-items: center;
+  }
+
+  .frame {
+    width: 100%;
+  }
+
+  .frame img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .split > div {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .frame {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .frame img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+  }
+
+  .split p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .split {
+    gap: 18px;
+  }
+
+  .frame img {
+    height: 250px;
+  }
+
+  .sh h2 {
+    font-size: 28px;
+  }
+
+  .sh p,
+  .split p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+}
