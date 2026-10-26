@@ -29,23 +29,29 @@
        MOBILE NAVIGATION
     ========================================= */
 
-    function toggleMenu(force) {
-      if (!menu || !burger || !shade) return;
 
-      var shouldOpen =
-        typeof force === "boolean"
-          ? force
-          : !menu.classList.contains("open");
+function toggleMenu(force) {
+  if (!menu || !burger || !shade) return;
 
-      menu.classList.toggle("open", shouldOpen);
-      burger.classList.toggle("open", shouldOpen);
-      shade.classList.toggle("open", shouldOpen);
+  var shouldOpen =
+    typeof force === "boolean"
+      ? force
+      : !menu.classList.contains("open");
 
-      burger.setAttribute(
-        "aria-expanded",
-        String(shouldOpen)
-      );
-    }
+  menu.classList.toggle("open", shouldOpen);
+  burger.classList.toggle("open", shouldOpen);
+  shade.classList.toggle("open", shouldOpen);
+
+  burger.setAttribute("aria-expanded", String(shouldOpen));
+
+  // Lock background scrolling while the mobile menu is open
+  if (window.innerWidth <= 768) {
+    document.body.classList.toggle("menu-open", shouldOpen);
+  } else {
+    document.body.classList.remove("menu-open");
+  }
+}
+
 
     burger?.addEventListener("click", function () {
       toggleMenu();

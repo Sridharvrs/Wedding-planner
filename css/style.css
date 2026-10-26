@@ -1265,3 +1265,13 @@ h1,h2,h3,.logo span{font-family:'Cormorant Garamond',serif;line-height:1.15}
     font-size: 12px;
   }
 }
+
+
+
+/* Prevent background scrolling when the mobile sidebar is open */
+@media (max-width: 768px) {
+  body.menu-open {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+}
